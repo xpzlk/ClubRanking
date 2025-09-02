@@ -1,0 +1,665 @@
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f5f5f5;
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+}
+
+.header-fixed .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    gap: 5px;
+}
+
+.logos-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.logos-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    max-width: 150px;
+}
+
+.logo-right {
+    height: 60px; /* ou la taille souhaitée */
+	width: auto;
+    max-width: 150px; /* ajustez selon vos besoins */
+}
+
+h1 {
+    text-align: center;
+    vertical-align: text-bottom;
+    color: #333;
+    margin: 0;
+    flex: 2;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+	padding-top: 130px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.file-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-selector label {
+    font-weight: bold;
+    color: #555;
+}
+
+.file-selector select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#filter {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.table-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling sur iOS */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+	position: relative;
+}
+
+th {
+    background-color: #C71F3C;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.serie-badge {
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    min-width: 24px;
+}
+
+/* Groupe A - Tons rouges */
+.serie-A1 { background-color: #c0392b; }
+.serie-A2 { background-color: #e74c3c; }
+
+/* Groupe B - Tons verts */
+.serie-B1 { background-color: #1e8449; }
+.serie-B2 { background-color: #27ae60; }
+.serie-B3 { background-color: #58d68d; }
+
+/* Groupe C - Tons oranges/bruns */
+.serie-C1 { background-color: #8b4513; }
+.serie-C2 { background-color: #d68910; }
+.serie-C3 { background-color: #f39c12; }
+.serie-C4 { background-color: #f7dc6f; color: #333; } /* Texte foncé pour le jaune clair */
+
+
+.gender-badge {
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 20px;
+}
+
+.gender-male {
+    background-color: #3498db;
+    color: white;
+}
+
+.gender-female {
+    background-color: #e91e63;
+    color: white;
+}
+
+.gender-other {
+    background-color: #95a5a6;
+    color: white;
+}
+
+
+/* Supprimer les deux blocs @media existants et les remplacer par celui-ci */
+@media (max-width: 768px) {
+    body {
+        padding-top: 200px; /* Plus d'espace pour l'entête mobile */
+    }
+    
+    .header-fixed {
+        padding: 10px;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .logos-left,
+    .logos-right {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .logo {
+        height: 30px;
+        max-width: 100px;
+    }
+    
+    .logo-right {
+        height: 35px;
+        max-width: 100px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .file-selector {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    #filter {
+        width: 100%;
+    }
+    
+    .table-container {
+        max-height: 60vh;
+        overflow-x: auto;
+		border-radius: 4px;
+    }
+    
+    table {
+        min-width: 100%; /* Changer de 800px à 100% */
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 6px 4px; /* Réduire encore plus le padding */
+        font-size: 10px;
+        white-space: nowrap; /* Empêcher le retour à la ligne */
+    }
+    
+    /* Réduire la largeur de certaines colonnes */
+    th:nth-child(1), td:nth-child(1) { width: 40px; } /* Rank */
+    th:nth-child(2), td:nth-child(2) { width: 50px; } /* Serie */
+    th:nth-child(3), td:nth-child(3) { width: 70px; } /* First Name */
+    th:nth-child(4), td:nth-child(4) { width: 70px; } /* Last Name */
+    th:nth-child(5), td:nth-child(5) { width: 50px; } /* Gender */
+    th:nth-child(6), td:nth-child(6) { width: 40px; } /* Age */
+    th:nth-child(7), td:nth-child(7) { width: 60px; } /* Category */
+    th:nth-child(8), td:nth-child(8) { width: 80px; } /* Club */
+    th:nth-child(9), td:nth-child(9) { width: 50px; } /* Points */
+    th:nth-child(10), td:nth-child(10) { width: 40px; } /* SR Serie */
+    th:nth-child(11), td:nth-child(11) { width: 40px; } /* SS Serie */
+    
+    .serie-badge {
+        font-size: 10px;
+        padding: 2px 4px;
+        min-width: 20px;
+    }
+    
+    .gender-badge {
+        font-size: 10px;
+        padding: 2px 4px;
+        min-width: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 220px;
+    }
+    
+    .container {
+        padding: 5px;
+    }
+    
+    .header-fixed {
+        padding: 8px;
+    }
+    
+    .header {
+        gap: 8px;
+    }
+    
+    .logos-left,
+    .logos-right {
+        gap: 8px;
+    }
+    
+    .logo {
+        height: 25px;
+        max-width: 80px;
+    }
+    
+    .logo-right {
+        height: 30px;
+        max-width: 80px;
+    }
+    
+    h1 {
+        font-size: 1.2em;
+        line-height: 1.2;
+    }
+    
+    .file-selector label {
+        font-size: 12px;
+    }
+    
+    .file-selector select {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    
+    #filter {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    
+    table {
+        font-size: 10px;
+    }
+    
+    th, td {
+        padding: 6px 4px;
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header {
+        gap: 15px;
+    }
+    
+    .logos-left {
+        gap: 10px;
+    }
+    
+    #filter {
+        width: 250px;
+    }
+}
+
+
+@media (max-width: 992px) and (min-width: 769px) {
+    .header {
+        gap: 10px;
+    }
+    
+    .logo {
+        height: 35px;
+        max-width: 120px;
+    }
+    
+    .logo-right {
+        height: 45px;
+        max-width: 120px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    #filter {
+        width: 200px;
+    }
+}
+
+
+@media print {
+    /* Supprimer les éléments non nécessaires à l'impression */
+    .header-fixed {
+        position: static !important;
+        box-shadow: none !important;
+        padding: 5px 0; /* Réduire le padding */
+        margin-bottom: 5px; /* Réduire la marge */
+    }
+    
+    .controls {
+        display: none !important;
+    }
+    
+    /* Réinitialiser le body */
+    body {
+        padding-top: 0 !important;
+        background-color: white !important;
+        font-size: 10px;
+        line-height: 1.2;
+        margin: 0 !important; /* Ajouter cette ligne */
+    }
+    
+    /* Conteneur principal - supprimer les marges */
+    .container {
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        page-break-before: avoid !important; /* Éviter le saut de page avant */
+    }
+    
+    /* Adapter l'en-tête */
+    .header {
+        margin-bottom: 5px; /* Réduire de 10px à 5px */
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Éviter le saut après l'en-tête */
+    }
+    
+    .logos-left,
+    .logos-right {
+        gap: 5px;
+    }
+    
+    .logo {
+        height: 25px;
+        max-width: 100px;
+    }
+    
+    .logo-right {
+        height: 30px;
+        max-width: 100px;
+    }
+    
+    h1 {
+        font-size: 16px;
+        margin: 0 !important; /* Supprimer toutes les marges du titre */
+        page-break-after: avoid; /* Éviter le saut après le titre */
+    }
+    
+    /* Optimiser le tableau pour l'impression */
+    .table-container {
+        max-height: none !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        background-color: white !important;
+        margin-top: 0 !important; /* Supprimer la marge supérieure */
+        page-break-before: avoid !important; /* Éviter le saut avant le tableau */
+    }
+    
+    table {
+        width: 100% !important;
+        min-width: 100% !important;
+        font-size: 8px;
+        page-break-inside: avoid;
+        margin-top: 0 !important; /* Supprimer la marge supérieure */
+    }
+    
+    /* Le reste de vos règles existantes... */
+}
+
+/* Spécifique pour l'impression paysage */
+@media print and (orientation: landscape) {
+    table {
+        font-size: 9px;
+    }
+    
+    th, td {
+        padding: 4px 3px;
+        font-size: 9px;
+    }
+    
+    .serie-badge,
+    .gender-badge {
+        font-size: 8px;
+        padding: 2px 4px;
+    }
+}
+
+
+.club-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.club-input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#clubSearch {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+}
+
+#clubFilter {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    min-width: 150px;
+}
+
+.stats {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 14px;
+    color: #666;
+}
+
+.stats span {
+    margin-right: 20px;
+}
+
+#filteredPlayers {
+    font-weight: bold;
+    color: #C71F3C;
+}
+
+/* Style pour les joueurs sans équipes éligibles */
+.no-eligible-teams {
+    background-color: #eae9e9 !important;
+    color: #898989;
+    opacity: 0.2;
+}
+
+.no-eligible-teams:hover {
+    background-color: #dddddd !important;
+    opacity: 0.6;
+}
+
+/* Responsive pour les nouveaux éléments */
+@media (max-width: 768px) {
+    .club-selector {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+    
+    .club-input-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    #clubSearch {
+        width: 100%;
+    }
+    
+    #clubFilter {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .stats {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+    .stats span {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+
+/* Style spécifique pour la colonne "Can play for..." (10e colonne) */
+td:nth-child(10) {
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+/* Version responsive pour mobile */
+@media (max-width: 768px) {
+    td:nth-child(10) {
+        font-size: 8px;
+        line-height: 1.1;
+    }
+}
+
+/* Version pour très petits écrans */
+@media (max-width: 480px) {
+    td:nth-child(10) {
+        font-size: 7px;
+        line-height: 1.0;
+    }
+}
+
+/* Version pour l'impression */
+@media print {
+    td:nth-child(10) {
+        font-size: 6px;
+        line-height: 1.0;
+    }
+}
+
+/* Version pour l'impression paysage */
+@media print and (orientation: landscape) {
+    td:nth-child(10) {
+        font-size: 7px;
+        line-height: 1.0;
+    }
+}
+
+.club-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.club-link {
+    color: #C70039;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 4px 8px;
+    border: 0px solid #C70039;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.club-link:hover {
+    background-color: #C70039;
+    color: white;
+}

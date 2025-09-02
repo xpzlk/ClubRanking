@@ -1,0 +1,1 @@
+SELECT * FROM `vw_interclub_team` ict INNER JOIN interclub_league icl ON (ict.league_id = icl.id)

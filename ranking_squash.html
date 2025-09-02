@@ -1,0 +1,5346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interclubs Club Ranking</title>
+    <link rel="stylesheet" href="style.css?1">
+    <link rel="shortcut icon" type="image/png" href="favicon.ico">
+</head>
+<body>
+    <div class="header-fixed">
+        <div class="container">
+            <div class="header">
+                <div class="logos-left">
+                    <img src="SwissSquash_Logo_wide.svg" alt="Swiss Squash" class="logo">
+                </div>
+                
+                <h1>Interclubs Club Ranking</h1>
+                
+            </div>
+            
+            <div class="controls">
+                <div class="club-selector">
+                    <label for="clubFilter">Club:</label>
+                    <div class="club-input-container">
+                        <input type="hidden" id="clubSearch" placeholder="Please select a club...">
+                        <select id="clubFilter">
+                            <option value="">All clubs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input type="text" id="filter" placeholder="Filter results..." onkeyup="filterTable()">
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="stats">
+            <span id="totalPlayers">Total: 0 players</span>
+            <span id="filteredPlayers"></span>
+        </div>
+        
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Nat. rank</th>
+                        <th>Nat. serie</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Club</th>
+                        <th>Points</th>
+                        <th>Club reank</th>
+                        <th>Can play for...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-club="Squash Club Uster">
+        <td>1</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>David</td>
+        <td>Bernet</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>20</td>
+        <td>Squash Club Uster</td>
+        <td>387.18</td>
+        <td>1</td>
+        <td>Uster I (NLA)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>2</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Yannick</td>
+        <td>Wilhelmi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>24</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>381.15</td>
+        <td>1</td>
+        <td>Grasshopper I (NLA)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>3</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Miguel</td>
+        <td>Mathis</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>22</td>
+        <td>Squash Club Uster</td>
+        <td>352.02</td>
+        <td>2</td>
+        <td>Uster I (NLA)</td>
+    </tr><tr data-club="Squash rackets Club Vaduz">
+        <td>4</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>David</td>
+        <td>Maier</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>24</td>
+        <td>Squash rackets Club Vaduz</td>
+        <td>338.98</td>
+        <td>1</td>
+        <td>Vaduz I (NLA)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>5</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Nils</td>
+        <td>Rösch</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>25</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>334.03</td>
+        <td>1</td>
+        <td>Pilatus Kriens I (NLA)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>6</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Joel</td>
+        <td>Siewerdt</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>33</td>
+        <td>Squash Club Uster</td>
+        <td>324.55</td>
+        <td>3</td>
+        <td>Uster I (NLA)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>7</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Cédric</td>
+        <td>Kuchen</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>33</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>303.67</td>
+        <td>2</td>
+        <td>Pilatus Kriens I (NLA)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>8</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Fabian Niklas</td>
+        <td>Seitz</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>18</td>
+        <td>Squash Club Uster</td>
+        <td>299.30</td>
+        <td>4</td>
+        <td>Uster I (NLA)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>9</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Nick</td>
+        <td>Greter</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>277.18</td>
+        <td>3</td>
+        <td>Pilatus Kriens I (NLA)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>10</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Lasse</td>
+        <td>Widmer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>19</td>
+        <td>Squash Club Uster</td>
+        <td>277.06</td>
+        <td>5</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>11</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Leandro</td>
+        <td>Vogel</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>276.89</td>
+        <td>4</td>
+        <td>Pilatus Kriens I (NLA)</td>
+    </tr><tr class="no-eligible-teams" data-club="Grasshopper Club Zürich">
+        <td>12</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Luca</td>
+        <td>Zatti</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>27</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>275.94</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>13</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Sven</td>
+        <td>Stettler</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>26</td>
+        <td>Squash Club Sihltal</td>
+        <td>273.76</td>
+        <td>1</td>
+        <td>Sihltal I (NLA)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>14</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Mika</td>
+        <td>Von Aesch</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>18</td>
+        <td>Squash Club Sihltal</td>
+        <td>272.15</td>
+        <td>2</td>
+        <td>Sihltal I (NLA)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>15</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Silvan</td>
+        <td>Oertli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>22</td>
+        <td>Squash Club Sihltal</td>
+        <td>263.59</td>
+        <td>3</td>
+        <td>Sihltal I (NLA)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>16</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Raphael</td>
+        <td>Ferraro</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>255.14</td>
+        <td>5</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>17</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Céline</td>
+        <td>Walser</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>27</td>
+        <td>Squashclub Allschwil</td>
+        <td>253.89</td>
+        <td>1</td>
+        <td>Allschwil I (NLB B)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>18</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Pasquale</td>
+        <td>Ruzicka</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>41</td>
+        <td>Squash Club Grabs</td>
+        <td>253.77</td>
+        <td>1</td>
+        <td>Grabs I (NLB A)</td>
+    </tr><tr data-club="Kriens Panthers">
+        <td>19</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Remo</td>
+        <td>Handl</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>30</td>
+        <td>Kriens Panthers</td>
+        <td>252.66</td>
+        <td>1</td>
+        <td>Panthers Kriens I (NLA)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>20</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Morris Nicolas</td>
+        <td>Frey</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>16</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>248.13</td>
+        <td>2</td>
+        <td>Grasshopper I (NLA)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>21</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Leandro</td>
+        <td>Mannhart</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>19</td>
+        <td>Squash Club Uster</td>
+        <td>247.52</td>
+        <td>6</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>22</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Barnabas</td>
+        <td>Szellö</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>18</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>245.17</td>
+        <td>3</td>
+        <td>Grasshopper I (NLA)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>23</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Cindy</td>
+        <td>Merlo</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>27</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>238.59</td>
+        <td>4</td>
+        <td>Grasshopper I (NLA)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>24</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Liam</td>
+        <td>Pössl</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>20</td>
+        <td>Squash Club Uster</td>
+        <td>238.32</td>
+        <td>7</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>25</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Michael</td>
+        <td>Häcki</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Club Royal Cham</td>
+        <td>237.16</td>
+        <td>1</td>
+        <td>Royal Cham I (NLB B)</td>
+    </tr><tr data-club="Kriens Panthers">
+        <td>26</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Yannick</td>
+        <td>Lindemann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>31</td>
+        <td>Kriens Panthers</td>
+        <td>236.91</td>
+        <td>2</td>
+        <td>Panthers Kriens I (NLA)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>27</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Luke</td>
+        <td>Schweizer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>16</td>
+        <td>Squash Club Sihltal</td>
+        <td>233.22</td>
+        <td>4</td>
+        <td>Sihltal I (NLA)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>28</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Ambre</td>
+        <td>Allinckx</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>23</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>232.20</td>
+        <td>6</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)</td>
+    </tr><tr data-club="Squash rackets Club Vaduz">
+        <td>29</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Patrick</td>
+        <td>Maier</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>29</td>
+        <td>Squash rackets Club Vaduz</td>
+        <td>231.50</td>
+        <td>2</td>
+        <td>Vaduz I (NLA)</td>
+    </tr><tr data-club="Squash Club Vitis">
+        <td>30</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Hendrik</td>
+        <td>Syed</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Vitis</td>
+        <td>228.87</td>
+        <td>1</td>
+        <td>Vitis Schlieren I (NLB A)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>31</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Iain</td>
+        <td>Keeling</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>23</td>
+        <td>Squash Club Sihltal</td>
+        <td>227.49</td>
+        <td>5</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>32</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Joel</td>
+        <td>Sommer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>33</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>226.95</td>
+        <td>5</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Grabs">
+        <td>33</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Simon</td>
+        <td>Draxler</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squash Club Grabs</td>
+        <td>225.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>34</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Wojtek</td>
+        <td>Wesolowski</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>224.68</td>
+        <td>7</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)</td>
+    </tr><tr data-club="Airgate Squash Club Zürich">
+        <td>35</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Ian</td>
+        <td>Schäfer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>32</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>222.25</td>
+        <td>1</td>
+        <td>Airgate Zürich I (NLA)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>36</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Lucas</td>
+        <td>Hänni</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>50</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>221.77</td>
+        <td>6</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>37</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Florian</td>
+        <td>Pössl</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>56</td>
+        <td>Squash Club Uster</td>
+        <td>221.47</td>
+        <td>8</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)</td>
+    </tr><tr data-club="Carnivals Squash Center">
+        <td>38</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Nadia Viviane</td>
+        <td>Pfister</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>29</td>
+        <td>Carnivals Squash Center</td>
+        <td>220.73</td>
+        <td>1</td>
+        <td>Carnivals (2 D)</td>
+    </tr><tr data-club="Squash Club Region Bodensee">
+        <td>39</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Dario</td>
+        <td>Bianchi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>41</td>
+        <td>Squash Club Region Bodensee</td>
+        <td>217.48</td>
+        <td>1</td>
+        <td>Region Bodensee I (NLB A)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>40</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Caspar</td>
+        <td>Honegger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>18</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>217.42</td>
+        <td>7</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)</td>
+    </tr><tr data-club="Squash Club Schaffhausen">
+        <td>41</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Caroline</td>
+        <td>Bachem</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>33</td>
+        <td>Squash Club Schaffhausen</td>
+        <td>214.62</td>
+        <td>1</td>
+        <td>Schaffhausen I (NLB A)</td>
+    </tr><tr data-club="Squash Club Schaffhausen">
+        <td>42</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Moritz</td>
+        <td>Brunner</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>25</td>
+        <td>Squash Club Schaffhausen</td>
+        <td>214.21</td>
+        <td>2</td>
+        <td>Schaffhausen I (NLB A)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>43</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>David</td>
+        <td>Gloor</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Royal Cham</td>
+        <td>212.63</td>
+        <td>2</td>
+        <td>Royal Cham I (NLB B)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>44</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Levin</td>
+        <td>Rüssli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>16</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>210.21</td>
+        <td>8</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)</td>
+    </tr><tr data-club="Squash Club Vitis">
+        <td>45</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Marcos</td>
+        <td>Alvarez</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Vitis</td>
+        <td>207.51</td>
+        <td>2</td>
+        <td>Vitis Schlieren I (NLB A)</td>
+    </tr><tr data-club="Squash Club Schaffhausen">
+        <td>46</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Zorana</td>
+        <td>Krnetic</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>28</td>
+        <td>Squash Club Schaffhausen</td>
+        <td>206.81</td>
+        <td>3</td>
+        <td>Schaffhausen I (NLB A)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>47</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Alistair</td>
+        <td>Gadola</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>27</td>
+        <td>Squash Club Uster</td>
+        <td>205.06</td>
+        <td>9</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>48</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Andy</td>
+        <td>Fritschi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>57</td>
+        <td>Squash Club Uster</td>
+        <td>204.01</td>
+        <td>10</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)</td>
+    </tr><tr data-club="Squashclub Appenzell">
+        <td>49</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Roman</td>
+        <td>Huber</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>47</td>
+        <td>Squashclub Appenzell</td>
+        <td>202.89</td>
+        <td>1</td>
+        <td>Appenzell I (1 A)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>50</td>
+        <td><span class="serie-badge serie-A1">A1</span></td>
+        <td>Cédric</td>
+        <td>Baumgartner</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>24</td>
+        <td>Squash Club Sihltal</td>
+        <td>202.35</td>
+        <td>6</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)</td>
+    </tr><tr data-club="Squash Club Bödeli">
+        <td>51</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Kevin</td>
+        <td>Brechbühl</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Club Bödeli</td>
+        <td>202.15</td>
+        <td>1</td>
+        <td>Bödeli Wilderswil I (NLB B)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>52</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Jan</td>
+        <td>Kempf</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>26</td>
+        <td>Squash Club Sihltal</td>
+        <td>200.54</td>
+        <td>7</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>53</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Giorgio</td>
+        <td>Sorio</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>62</td>
+        <td>Squash Club Royal Cham</td>
+        <td>199.48</td>
+        <td>3</td>
+        <td>Royal Cham I (NLB B)</td>
+    </tr><tr data-club="Squash Club Vitis">
+        <td>54</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Silvio</td>
+        <td>Soom</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>30</td>
+        <td>Squash Club Vitis</td>
+        <td>198.83</td>
+        <td>3</td>
+        <td>Vitis Schlieren I (NLB A)</td>
+    </tr><tr data-club="Airgate Squash Club Zürich">
+        <td>55</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Conrad</td>
+        <td>Kim</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>40</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>196.94</td>
+        <td>2</td>
+        <td>Airgate Zürich I (NLA)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>56</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Maja</td>
+        <td>Maziuk</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>18</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>194.87</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>57</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Severin</td>
+        <td>Escher</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Club Sihltal</td>
+        <td>193.36</td>
+        <td>8</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)</td>
+    </tr><tr data-club="Squash Rackets Club Bern">
+        <td>58</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Andrés</td>
+        <td>Meier</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>49</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>192.24</td>
+        <td>1</td>
+        <td>Bern I (1 D)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>59</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Michael</td>
+        <td>Müller</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>49</td>
+        <td>Squash Club Sihltal</td>
+        <td>192.07</td>
+        <td>9</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)<br />
+Sihltal III (1 B)</td>
+    </tr><tr data-club="Squash Club Vitis">
+        <td>60</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Silverio</td>
+        <td>Alvarez</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>50</td>
+        <td>Squash Club Vitis</td>
+        <td>191.54</td>
+        <td>4</td>
+        <td>Vitis Schlieren I (NLB A)</td>
+    </tr><tr data-club="Squash Club Schaffhausen">
+        <td>61</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Michael</td>
+        <td>Tanner</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>27</td>
+        <td>Squash Club Schaffhausen</td>
+        <td>189.58</td>
+        <td>4</td>
+        <td>Schaffhausen I (NLB A)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>62</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Urs</td>
+        <td>Altenburger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>47</td>
+        <td>Squash Club Sihltal</td>
+        <td>188.68</td>
+        <td>10</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)<br />
+Sihltal III (1 B)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>63</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Till</td>
+        <td>Oertli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>24</td>
+        <td>Squash Club Sihltal</td>
+        <td>188.65</td>
+        <td>11</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)<br />
+Sihltal III (1 B)</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>64</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Maurice</td>
+        <td>Koll</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Squash Winterthur</td>
+        <td>188.51</td>
+        <td>1</td>
+        <td>Winterthur I (NLB A)</td>
+    </tr><tr data-club="Squash Fricktal">
+        <td>65</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Armand</td>
+        <td>Hohenstein</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>23</td>
+        <td>Squash Fricktal</td>
+        <td>188.12</td>
+        <td>1</td>
+        <td>Squash Fricktal I (1 D)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>66</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Marco</td>
+        <td>Valpiani</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>62</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>187.88</td>
+        <td>8</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)</td>
+    </tr><tr data-club="Squash Club Schaffhausen">
+        <td>67</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Thorsten</td>
+        <td>Fuchs</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>42</td>
+        <td>Squash Club Schaffhausen</td>
+        <td>185.46</td>
+        <td>5</td>
+        <td>Schaffhausen I (NLB A)<br />
+Schaffhausen III (3 B)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>68</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Paul</td>
+        <td>Beger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>16</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>183.96</td>
+        <td>9</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>69</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Finn</td>
+        <td>Rüssli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>183.71</td>
+        <td>9</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>70</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Florian</td>
+        <td>Marty</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>29</td>
+        <td>Squash Club Sihltal</td>
+        <td>181.99</td>
+        <td>12</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)<br />
+Sihltal III (1 B)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>71</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Luis</td>
+        <td>He</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Club Uster</td>
+        <td>180.78</td>
+        <td>11</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club 11">
+        <td>72</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Kevin</td>
+        <td>Ryser</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>37</td>
+        <td>Squash Club 11</td>
+        <td>179.51</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>73</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Stephane</td>
+        <td>De craecker</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>58</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>178.41</td>
+        <td>10</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>74</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Pascal</td>
+        <td>Schneider</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squash Club Grabs</td>
+        <td>178.16</td>
+        <td>2</td>
+        <td>Grabs I (NLB A)</td>
+    </tr><tr data-club="Squashclub St Gallen">
+        <td>75</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Astrid</td>
+        <td>Reimer-Kern</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>36</td>
+        <td>Squashclub St Gallen</td>
+        <td>178.14</td>
+        <td>1</td>
+        <td>St. Gallen I (1 A)</td>
+    </tr><tr data-club="Squash Club Aarsports">
+        <td>76</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>André</td>
+        <td>Lüscher</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>34</td>
+        <td>Squash Club Aarsports</td>
+        <td>178.00</td>
+        <td>1</td>
+        <td>Aarsports I (NLB B)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>77</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Nico</td>
+        <td>Jaussi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Club Sihltal</td>
+        <td>177.83</td>
+        <td>13</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)<br />
+Sihltal III (1 B)<br />
+Sihltal IV (1 C)</td>
+    </tr><tr data-club="Squash Club Eglisee">
+        <td>78</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Marc</td>
+        <td>Müller</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Eglisee</td>
+        <td>176.89</td>
+        <td>1</td>
+        <td>Eglisee (1 D)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>79</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Mike</td>
+        <td>Brändle</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squashclub Allschwil</td>
+        <td>175.45</td>
+        <td>2</td>
+        <td>Allschwil I (NLB B)</td>
+    </tr><tr data-club="Squash Club Aarsports">
+        <td>80</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Ronnie</td>
+        <td>Schüepp</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>45</td>
+        <td>Squash Club Aarsports</td>
+        <td>175.42</td>
+        <td>2</td>
+        <td>Aarsports I (NLB B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Grabs">
+        <td>81</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Youssef</td>
+        <td>Elgammal</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>20</td>
+        <td>Squash Club Grabs</td>
+        <td>173.93</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>82</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Nico</td>
+        <td>Hüppi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Sihltal</td>
+        <td>172.26</td>
+        <td>14</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)<br />
+Sihltal III (1 B)<br />
+Sihltal IV (1 C)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>83</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Erich</td>
+        <td>Aschenberger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>50</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>171.60</td>
+        <td>11</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>84</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Alain</td>
+        <td>Sütterlin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>32</td>
+        <td>Squashclub Allschwil</td>
+        <td>169.57</td>
+        <td>3</td>
+        <td>Allschwil I (NLB B)</td>
+    </tr><tr data-club="Team Swiss Racketlon">
+        <td>85</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Noah</td>
+        <td>Mamié</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>27</td>
+        <td>Team Swiss Racketlon</td>
+        <td>169.00</td>
+        <td>1</td>
+        <td>Team Swiss Racketlon (NLB B)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>86</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Oliver</td>
+        <td>Bühler</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>41</td>
+        <td>Squashclub Allschwil</td>
+        <td>168.64</td>
+        <td>4</td>
+        <td>Allschwil I (NLB B)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>87</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Livio</td>
+        <td>Giacu</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Club Uster</td>
+        <td>165.90</td>
+        <td>12</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)</td>
+    </tr><tr data-club="Airgate Squash Club Zürich">
+        <td>88</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Moritz</td>
+        <td>Müller</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>46</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>165.05</td>
+        <td>3</td>
+        <td>Airgate Zürich I (NLA)</td>
+    </tr><tr data-club="Squashclub St Gallen">
+        <td>89</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Thomas</td>
+        <td>Künzler</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>42</td>
+        <td>Squashclub St Gallen</td>
+        <td>164.68</td>
+        <td>2</td>
+        <td>St. Gallen I (1 A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>90</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Axel</td>
+        <td>Tappe</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>33</td>
+        <td>Squash Club Grabs</td>
+        <td>164.53</td>
+        <td>3</td>
+        <td>Grabs I (NLB A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>91</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Jahn</td>
+        <td>Bucher-straub</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>34</td>
+        <td>Squash Club Grabs</td>
+        <td>164.43</td>
+        <td>4</td>
+        <td>Grabs I (NLB A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Fricktal">
+        <td>92</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Manuel</td>
+        <td>Hösch</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>36</td>
+        <td>Squash Fricktal</td>
+        <td>164.29</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>93</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Kartik</td>
+        <td>Buddha</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>36</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>163.72</td>
+        <td>12</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)</td>
+    </tr><tr data-club="Airgate Squash Club Zürich">
+        <td>94</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Jürgen</td>
+        <td>Kremer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>47</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>162.83</td>
+        <td>4</td>
+        <td>Airgate Zürich I (NLA)</td>
+    </tr><tr data-club="Squash Club Aarsports">
+        <td>95</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Sven</td>
+        <td>Inäbnit</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>45</td>
+        <td>Squash Club Aarsports</td>
+        <td>162.65</td>
+        <td>3</td>
+        <td>Aarsports I (NLB B)</td>
+    </tr><tr data-club="Squashclub Appenzell">
+        <td>96</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Damian</td>
+        <td>Glaus</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>31</td>
+        <td>Squashclub Appenzell</td>
+        <td>162.21</td>
+        <td>2</td>
+        <td>Appenzell I (1 A)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>97</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Mark</td>
+        <td>Robbins</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>55</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>161.06</td>
+        <td>13</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>98</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Luc</td>
+        <td>Guebey</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>161.03</td>
+        <td>10</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Sihltal">
+        <td>99</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Diego</td>
+        <td>Staub</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>40</td>
+        <td>Squash Club Sihltal</td>
+        <td>160.38</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>100</td>
+        <td><span class="serie-badge serie-A2">A2</span></td>
+        <td>Jasmin</td>
+        <td>Ballmann</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>35</td>
+        <td>Squashclub Allschwil</td>
+        <td>159.90</td>
+        <td>5</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>101</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Sandro</td>
+        <td>Meier</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>33</td>
+        <td>Squash Club Sihltal</td>
+        <td>159.22</td>
+        <td>15</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)<br />
+Sihltal III (1 B)<br />
+Sihltal IV (1 C)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>102</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Philipp</td>
+        <td>Gass</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>45</td>
+        <td>Squashclub Allschwil</td>
+        <td>159.03</td>
+        <td>6</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)</td>
+    </tr><tr data-club="Squash Club Bödeli">
+        <td>103</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Daniel</td>
+        <td>Weibel</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>56</td>
+        <td>Squash Club Bödeli</td>
+        <td>158.87</td>
+        <td>2</td>
+        <td>Bödeli Wilderswil I (NLB B)</td>
+    </tr><tr data-club="Squash Fricktal">
+        <td>104</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Michi</td>
+        <td>Schweizer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>Squash Fricktal</td>
+        <td>157.93</td>
+        <td>2</td>
+        <td>Squash Fricktal I (1 D)</td>
+    </tr><tr data-club="Squash Club 11">
+        <td>105</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Kevin</td>
+        <td>Kunz</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>36</td>
+        <td>Squash Club 11</td>
+        <td>157.84</td>
+        <td>1</td>
+        <td>SC 11 (1 D)</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>106</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Sébastian</td>
+        <td>Garai</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>47</td>
+        <td>Squash Winterthur</td>
+        <td>157.01</td>
+        <td>2</td>
+        <td>Winterthur I (NLB A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Team Swiss Racketlon">
+        <td>107</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Léon</td>
+        <td>Mamié</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>25</td>
+        <td>Team Swiss Racketlon</td>
+        <td>156.83</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Aarsports">
+        <td>108</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Pascal</td>
+        <td>Grolimund</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>46</td>
+        <td>Squash Club Aarsports</td>
+        <td>155.72</td>
+        <td>4</td>
+        <td>Aarsports I (NLB B)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>109</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Raimo</td>
+        <td>Yliranta</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>60</td>
+        <td>Squash Club Grabs</td>
+        <td>155.50</td>
+        <td>5</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)</td>
+    </tr><tr data-club="Team Swiss Racketlon">
+        <td>110</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Bruno</td>
+        <td>Scherrer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>37</td>
+        <td>Team Swiss Racketlon</td>
+        <td>154.25</td>
+        <td>2</td>
+        <td>Team Swiss Racketlon (NLB B)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>111</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Alina</td>
+        <td>Pössl</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>24</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>154.21</td>
+        <td>11</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>112</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Kate</td>
+        <td>Gadola</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>29</td>
+        <td>Squash Club Uster</td>
+        <td>153.54</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>113</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Stephan</td>
+        <td>Germundson</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>62</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>151.79</td>
+        <td>14</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)</td>
+    </tr><tr data-club="Squash Club Ruderbach">
+        <td>114</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Patrick</td>
+        <td>Casanova-lorenz</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>40</td>
+        <td>Squash Club Ruderbach</td>
+        <td>151.51</td>
+        <td>1</td>
+        <td>Ruderbach I (1 A)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>115</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Norina</td>
+        <td>Malbasic</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>18</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>151.46</td>
+        <td>12</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>116</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Julia</td>
+        <td>Schmalz</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>39</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>151.22</td>
+        <td>15</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>117</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Leila</td>
+        <td>Hirt</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>20</td>
+        <td>Squash Club Uster</td>
+        <td>150.41</td>
+        <td>13</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>118</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Kuba</td>
+        <td>Wesolowski</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>150.12</td>
+        <td>13</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)<br />
+Pilatus Kriens IV (1 C)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>119</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Nicola</td>
+        <td>Szabo</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>24</td>
+        <td>Squashclub Allschwil</td>
+        <td>149.48</td>
+        <td>7</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>120</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Anton</td>
+        <td>Shlain</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>16</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>149.20</td>
+        <td>14</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)<br />
+Pilatus Kriens IV (1 C)</td>
+    </tr><tr class="no-eligible-teams" data-club="Grasshopper Club Zürich">
+        <td>121</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Roman</td>
+        <td>Scheerle</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>55</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>149.03</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Swissair">
+        <td>122</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Nikolas</td>
+        <td>Paul</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squash Club Swissair</td>
+        <td>148.53</td>
+        <td>1</td>
+        <td>Swissair (2 B)</td>
+    </tr><tr data-club="Squash Club Region Bodensee">
+        <td>123</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Arno</td>
+        <td>Müller Pathle</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>62</td>
+        <td>Squash Club Region Bodensee</td>
+        <td>147.88</td>
+        <td>2</td>
+        <td>Region Bodensee I (NLB A)</td>
+    </tr><tr data-club="Carnivals Squash Center">
+        <td>124</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Alexander</td>
+        <td>Ugolini</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>47</td>
+        <td>Carnivals Squash Center</td>
+        <td>147.75</td>
+        <td>2</td>
+        <td>Carnivals (2 D)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>125</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Ben</td>
+        <td>Studhalter</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>14</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>147.60</td>
+        <td>15</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)<br />
+Pilatus Kriens IV (1 C)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>126</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Stefan</td>
+        <td>Achim</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>147.42</td>
+        <td>16</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)<br />
+Pilatus Kriens IV (1 C)</td>
+    </tr><tr data-club="Squash Rackets Club Bern">
+        <td>127</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Raphael</td>
+        <td>Sommer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>32</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>146.65</td>
+        <td>2</td>
+        <td>Bern I (1 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>128</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Noah</td>
+        <td>Mannhart</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>23</td>
+        <td>Squash Club Uster</td>
+        <td>146.31</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>129</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Erich</td>
+        <td>Weidmann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>45</td>
+        <td>Squash Winterthur</td>
+        <td>146.16</td>
+        <td>3</td>
+        <td>Winterthur I (NLB A)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>130</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Ignacio</td>
+        <td>Belotto</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>145.65</td>
+        <td>16</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)</td>
+    </tr><tr data-club="Squash Club Bödeli">
+        <td>131</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Martin</td>
+        <td>Meier</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Squash Club Bödeli</td>
+        <td>144.54</td>
+        <td>3</td>
+        <td>Bödeli Wilderswil I (NLB B)</td>
+    </tr><tr data-club="Squash Club Aarsports">
+        <td>132</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Marc</td>
+        <td>Pieren</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>45</td>
+        <td>Squash Club Aarsports</td>
+        <td>142.93</td>
+        <td>5</td>
+        <td>Aarsports I (NLB B)<br />
+Aarsports II (2 C)</td>
+    </tr><tr data-club="Team Swiss Racketlon">
+        <td>133</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Raphael</td>
+        <td>Paglia</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>49</td>
+        <td>Team Swiss Racketlon</td>
+        <td>142.57</td>
+        <td>3</td>
+        <td>Team Swiss Racketlon (NLB B)</td>
+    </tr><tr data-club="Squash Club Eglisee">
+        <td>134</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Germán</td>
+        <td>Sarmiento</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>41</td>
+        <td>Squash Club Eglisee</td>
+        <td>142.51</td>
+        <td>2</td>
+        <td>Eglisee (1 D)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>135</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Robin</td>
+        <td>Wallace</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>142.49</td>
+        <td>17</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)<br />
+Grasshopper V (1 C)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>136</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Carlo</td>
+        <td>Empoli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>141.86</td>
+        <td>18</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)<br />
+Grasshopper V (1 C)</td>
+    </tr><tr data-club="Squash Club Supernova">
+        <td>137</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Ken</td>
+        <td>Wacker</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>46</td>
+        <td>Squash Club Supernova</td>
+        <td>141.06</td>
+        <td>1</td>
+        <td>Supernova Seegarten I (1 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Airgate Squash Club Zürich">
+        <td>138</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Paul</td>
+        <td>Gether</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>54</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>140.98</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Aarsports">
+        <td>139</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Thomas</td>
+        <td>Friedrich</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>Squash Club Aarsports</td>
+        <td>140.57</td>
+        <td>6</td>
+        <td>Aarsports I (NLB B)<br />
+Aarsports II (2 C)</td>
+    </tr><tr data-club="Squash Club Swissair">
+        <td>140</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Patrik</td>
+        <td>Märchy</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>43</td>
+        <td>Squash Club Swissair</td>
+        <td>139.90</td>
+        <td>2</td>
+        <td>Swissair (2 B)</td>
+    </tr><tr data-club="Airgate Squash Club Zürich">
+        <td>141</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Daniel</td>
+        <td>Graf</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>40</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>139.88</td>
+        <td>5</td>
+        <td>Airgate Zürich I (NLA)<br />
+Airgate Zürich II (NLB A)</td>
+    </tr><tr data-club="Squash Club Supernova">
+        <td>142</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Chris</td>
+        <td>Papadopoulos</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>57</td>
+        <td>Squash Club Supernova</td>
+        <td>139.72</td>
+        <td>2</td>
+        <td>Supernova Seegarten I (1 A)</td>
+    </tr><tr data-club="Squashclub Appenzell">
+        <td>143</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Stefan</td>
+        <td>Fritsche</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>Squashclub Appenzell</td>
+        <td>138.98</td>
+        <td>3</td>
+        <td>Appenzell I (1 A)</td>
+    </tr><tr data-club="Squashclub St Gallen">
+        <td>144</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Christian</td>
+        <td>Zürcher</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>58</td>
+        <td>Squashclub St Gallen</td>
+        <td>138.04</td>
+        <td>3</td>
+        <td>St. Gallen I (1 A)</td>
+    </tr><tr data-club="Rohrdorferberg">
+        <td>145</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Luca</td>
+        <td>Meier</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>30</td>
+        <td>Rohrdorferberg</td>
+        <td>136.64</td>
+        <td>1</td>
+        <td>Rohrdorferberg I (2 C)</td>
+    </tr><tr data-club="Squash Club Luzern">
+        <td>146</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Juan</td>
+        <td>Reyneke</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>45</td>
+        <td>Squash Club Luzern</td>
+        <td>136.50</td>
+        <td>1</td>
+        <td>Luzern I (1 D)</td>
+    </tr><tr data-club="Airgate Squash Club Zürich">
+        <td>147</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Sverre</td>
+        <td>Prytz</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>56</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>135.15</td>
+        <td>6</td>
+        <td>Airgate Zürich I (NLA)<br />
+Airgate Zürich II (NLB A)</td>
+    </tr><tr data-club="Squash Club Region Bodensee">
+        <td>148</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Michael</td>
+        <td>Knöpfel</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>36</td>
+        <td>Squash Club Region Bodensee</td>
+        <td>134.79</td>
+        <td>3</td>
+        <td>Region Bodensee I (NLB A)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>149</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Olivier</td>
+        <td>Nerko</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>14</td>
+        <td>Squash Club Uster</td>
+        <td>134.28</td>
+        <td>14</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>150</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Alexis</td>
+        <td>Detavernier</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>43</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>133.78</td>
+        <td>19</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)<br />
+Grasshopper V (1 C)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>151</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Jan</td>
+        <td>Ahmerkamp</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>43</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>133.59</td>
+        <td>20</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)<br />
+Grasshopper V (1 C)</td>
+    </tr><tr data-club="Squash Club Aarsports">
+        <td>152</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Rudy</td>
+        <td>Pelgrims</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>58</td>
+        <td>Squash Club Aarsports</td>
+        <td>133.17</td>
+        <td>7</td>
+        <td>Aarsports I (NLB B)<br />
+Aarsports II (2 C)</td>
+    </tr><tr data-club="Squash Club Bödeli">
+        <td>153</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Ramona</td>
+        <td>Lanz</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>26</td>
+        <td>Squash Club Bödeli</td>
+        <td>133.15</td>
+        <td>4</td>
+        <td>Bödeli Wilderswil I (NLB B)</td>
+    </tr><tr data-club="Squashclub St Gallen">
+        <td>154</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Björn</td>
+        <td>Martin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>34</td>
+        <td>Squashclub St Gallen</td>
+        <td>131.41</td>
+        <td>4</td>
+        <td>St. Gallen I (1 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Fricktal">
+        <td>155</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Nathalie</td>
+        <td>Vogel</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>36</td>
+        <td>Squash Fricktal</td>
+        <td>131.37</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Rackets Club Bern">
+        <td>156</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Markus</td>
+        <td>Känel</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>63</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>131.11</td>
+        <td>3</td>
+        <td>Bern I (1 D)</td>
+    </tr><tr data-club="Squash Rackets Club Bern">
+        <td>157</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Aaron</td>
+        <td>Renggli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>130.62</td>
+        <td>4</td>
+        <td>Bern I (1 D)</td>
+    </tr><tr data-club="Carnivals Squash Center">
+        <td>158</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Stefan</td>
+        <td>Gehrig</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>30</td>
+        <td>Carnivals Squash Center</td>
+        <td>130.35</td>
+        <td>3</td>
+        <td>Carnivals (2 D)</td>
+    </tr><tr data-club="Squash Club Stelz">
+        <td>159</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Bernhard</td>
+        <td>Schläpfer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>58</td>
+        <td>Squash Club Stelz</td>
+        <td>130.10</td>
+        <td>1</td>
+        <td>Stelz Wil I (2 A)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>160</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Milena</td>
+        <td>Penkov</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>31</td>
+        <td>Squash Club Uster</td>
+        <td>127.83</td>
+        <td>15</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>161</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Marco</td>
+        <td>Rohner</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>43</td>
+        <td>Squash Club Uster</td>
+        <td>127.71</td>
+        <td>16</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)</td>
+    </tr><tr data-club="Rohrdorferberg">
+        <td>162</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Ralph</td>
+        <td>Schmid</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Rohrdorferberg</td>
+        <td>127.64</td>
+        <td>2</td>
+        <td>Rohrdorferberg I (2 C)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>163</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Manuel</td>
+        <td>Ochsner</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Royal Cham</td>
+        <td>127.14</td>
+        <td>4</td>
+        <td>Royal Cham I (NLB B)</td>
+    </tr><tr data-club="Squash Club Stelz">
+        <td>164</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Oliver</td>
+        <td>Nef</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Stelz</td>
+        <td>125.86</td>
+        <td>2</td>
+        <td>Stelz Wil I (2 A)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>165</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Melanie</td>
+        <td>Amrein</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>38</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>124.95</td>
+        <td>21</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)<br />
+Grasshopper V (1 C)<br />
+Grasshopper VI (2 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Supernova">
+        <td>166</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Marco</td>
+        <td>Scarlato</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Club Supernova</td>
+        <td>124.71</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>167</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Nick</td>
+        <td>Peter</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>122.74</td>
+        <td>17</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)<br />
+Pilatus Kriens IV (1 C)<br />
+Pilatus Kriens V (2 D)</td>
+    </tr><tr data-club="UBS Squash Club Zürich">
+        <td>168</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Sean</td>
+        <td>Boyle</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>UBS Squash Club Zürich</td>
+        <td>121.84</td>
+        <td>1</td>
+        <td>UBS Zürich (2 C)</td>
+    </tr><tr data-club="Squash Club Ruderbach">
+        <td>169</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Marcel</td>
+        <td>Fässler</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>36</td>
+        <td>Squash Club Ruderbach</td>
+        <td>120.49</td>
+        <td>2</td>
+        <td>Ruderbach I (1 A)</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>170</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Tizian</td>
+        <td>Moog</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>30</td>
+        <td>Squash Winterthur</td>
+        <td>119.73</td>
+        <td>4</td>
+        <td>Winterthur I (NLB A)</td>
+    </tr><tr data-club="Squash Club Ruderbach">
+        <td>171</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Daniel</td>
+        <td>Keller</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>Squash Club Ruderbach</td>
+        <td>119.50</td>
+        <td>3</td>
+        <td>Ruderbach I (1 A)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>172</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Jochen</td>
+        <td>Keiber</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>118.79</td>
+        <td>22</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)<br />
+Grasshopper V (1 C)<br />
+Grasshopper VI (2 B)</td>
+    </tr><tr data-club="Squash Rackets Club Bern">
+        <td>173</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Tobias</td>
+        <td>Wallin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>48</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>118.33</td>
+        <td>5</td>
+        <td>Bern I (1 D)<br />
+Bern II (2 D)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>174</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Joel</td>
+        <td>Hinds</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>26</td>
+        <td>Squash Club Royal Cham</td>
+        <td>118.15</td>
+        <td>5</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>175</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Kees</td>
+        <td>Bergisch</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>68</td>
+        <td>Squash Club Uster</td>
+        <td>117.81</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>176</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Benedikt</td>
+        <td>Ammann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>117.50</td>
+        <td>23</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)<br />
+Grasshopper V (1 C)<br />
+Grasshopper VI (2 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>177</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Livio</td>
+        <td>Ferrarini</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squash Club Uster</td>
+        <td>117.38</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>178</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Flavio</td>
+        <td>Wolf</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>26</td>
+        <td>Squashclub Allschwil</td>
+        <td>116.56</td>
+        <td>8</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>179</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Robin</td>
+        <td>Nayman</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>54</td>
+        <td>Squash Club Royal Cham</td>
+        <td>116.53</td>
+        <td>6</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>180</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Luisa</td>
+        <td>Schneider</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>23</td>
+        <td>Squash Club Uster</td>
+        <td>116.30</td>
+        <td>17</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>181</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Thomas</td>
+        <td>Demmel</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Squash Winterthur</td>
+        <td>116.19</td>
+        <td>5</td>
+        <td>Winterthur I (NLB A)<br />
+Winterthur II (1 C)</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>182</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Danielle</td>
+        <td>Baumeler</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>15</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>115.86</td>
+        <td>18</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)<br />
+Pilatus Kriens IV (1 C)<br />
+Pilatus Kriens V (2 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Sihltal">
+        <td>183</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Roman</td>
+        <td>Hirsbrunner</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>47</td>
+        <td>Squash Club Sihltal</td>
+        <td>115.66</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>184</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Puneet</td>
+        <td>Maheshwari</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>42</td>
+        <td>Squash Club Royal Cham</td>
+        <td>114.51</td>
+        <td>7</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>185</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Gabriel</td>
+        <td>Fernandez</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Uster</td>
+        <td>114.23</td>
+        <td>18</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>186</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Oliver</td>
+        <td>Iselin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>29</td>
+        <td>Squash Winterthur</td>
+        <td>113.83</td>
+        <td>6</td>
+        <td>Winterthur I (NLB A)<br />
+Winterthur II (1 C)</td>
+    </tr><tr data-club="UBS Squash Club Zürich">
+        <td>187</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Nicholas</td>
+        <td>Brown</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>66</td>
+        <td>UBS Squash Club Zürich</td>
+        <td>113.62</td>
+        <td>2</td>
+        <td>UBS Zürich (2 C)</td>
+    </tr><tr data-club="Squash Club Vitis">
+        <td>188</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Marius</td>
+        <td>Hug</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>54</td>
+        <td>Squash Club Vitis</td>
+        <td>113.00</td>
+        <td>5</td>
+        <td>Vitis Schlieren I (NLB A)<br />
+Vitis Schlieren II (1 C)</td>
+    </tr><tr data-club="Squash Club Luzern">
+        <td>189</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Reto</td>
+        <td>Hediger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>46</td>
+        <td>Squash Club Luzern</td>
+        <td>112.45</td>
+        <td>2</td>
+        <td>Luzern I (1 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>190</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Zack</td>
+        <td>Mailley-Smith</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>14</td>
+        <td>Squash Club Uster</td>
+        <td>112.08</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>191</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Marius</td>
+        <td>Lüthi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>40</td>
+        <td>Squashclub Allschwil</td>
+        <td>112.05</td>
+        <td>9</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>192</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Benjamin</td>
+        <td>Wermuth</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>22</td>
+        <td>Squash Club Royal Cham</td>
+        <td>111.53</td>
+        <td>8</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)</td>
+    </tr><tr data-club="Squash Club Eglisee">
+        <td>193</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Stefan</td>
+        <td>Grundmann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>63</td>
+        <td>Squash Club Eglisee</td>
+        <td>111.39</td>
+        <td>3</td>
+        <td>Eglisee (1 D)</td>
+    </tr><tr data-club="Squash Club Region Bodensee">
+        <td>194</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Jörg</td>
+        <td>Schmid</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>54</td>
+        <td>Squash Club Region Bodensee</td>
+        <td>110.48</td>
+        <td>4</td>
+        <td>Region Bodensee I (NLB A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>195</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Michael</td>
+        <td>Vogel</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>26</td>
+        <td>Squash Club Grabs</td>
+        <td>110.36</td>
+        <td>6</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>196</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Christian</td>
+        <td>Meienberg</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Royal Cham</td>
+        <td>110.27</td>
+        <td>9</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)<br />
+Royal Cham III (2 C)</td>
+    </tr><tr data-club="Squashclub St Gallen">
+        <td>197</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Markus</td>
+        <td>Roelli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>49</td>
+        <td>Squashclub St Gallen</td>
+        <td>109.98</td>
+        <td>5</td>
+        <td>St. Gallen I (1 A)<br />
+St. Gallen II (3 A)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>198</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Kevin</td>
+        <td>Stehrenberger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Club Uster</td>
+        <td>109.87</td>
+        <td>19</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)</td>
+    </tr><tr data-club="Squash Club Quattro Willisau">
+        <td>199</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Thomas</td>
+        <td>Keel</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>64</td>
+        <td>Squash Club Quattro Willisau</td>
+        <td>108.10</td>
+        <td>1</td>
+        <td>Willisau (3 D)</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>200</td>
+        <td><span class="serie-badge serie-B1">B1</span></td>
+        <td>Reto</td>
+        <td>Vollmer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>19</td>
+        <td>Squash Winterthur</td>
+        <td>107.30</td>
+        <td>7</td>
+        <td>Winterthur I (NLB A)<br />
+Winterthur II (1 C)</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>201</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Thomas</td>
+        <td>Dewaele</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squash Winterthur</td>
+        <td>107.03</td>
+        <td>8</td>
+        <td>Winterthur I (NLB A)<br />
+Winterthur II (1 C)</td>
+    </tr><tr class="no-eligible-teams" data-club="Grasshopper Club Zürich">
+        <td>202</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Thomas</td>
+        <td>Keel</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>53</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>106.80</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>203</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Roman</td>
+        <td>Lehmann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>26</td>
+        <td>Squash Club Grabs</td>
+        <td>106.71</td>
+        <td>7</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Vitis">
+        <td>204</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Zane</td>
+        <td>Harms</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Squash Club Vitis</td>
+        <td>105.34</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Royal Cham">
+        <td>205</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Andreas</td>
+        <td>Kotala</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Club Royal Cham</td>
+        <td>104.01</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Eglisee">
+        <td>206</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Jonas</td>
+        <td>Vasey</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>55</td>
+        <td>Squash Club Eglisee</td>
+        <td>103.54</td>
+        <td>4</td>
+        <td>Eglisee (1 D)</td>
+    </tr><tr data-club="Squash Club Ruderbach">
+        <td>207</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Luca</td>
+        <td>Rivelli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>48</td>
+        <td>Squash Club Ruderbach</td>
+        <td>102.37</td>
+        <td>4</td>
+        <td>Ruderbach I (1 A)</td>
+    </tr><tr data-club="Squash Club Luzern">
+        <td>208</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Philipp</td>
+        <td>Nuber</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>30</td>
+        <td>Squash Club Luzern</td>
+        <td>101.92</td>
+        <td>3</td>
+        <td>Luzern I (1 D)</td>
+    </tr><tr data-club="Squash Club Stelz">
+        <td>209</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Peter</td>
+        <td>Lindstrom</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>60</td>
+        <td>Squash Club Stelz</td>
+        <td>100.27</td>
+        <td>3</td>
+        <td>Stelz Wil I (2 A)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>210</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Philippe</td>
+        <td>Haussener</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squash Club Royal Cham</td>
+        <td>99.88</td>
+        <td>10</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)<br />
+Royal Cham III (2 C)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>211</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Thomas</td>
+        <td>Wachter</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>58</td>
+        <td>Squash Club Grabs</td>
+        <td>98.98</td>
+        <td>8</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)</td>
+    </tr><tr data-club="Squash Club Schaffhausen">
+        <td>212</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Luca</td>
+        <td>Donisi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>30</td>
+        <td>Squash Club Schaffhausen</td>
+        <td>98.31</td>
+        <td>6</td>
+        <td>Schaffhausen I (NLB A)<br />
+Schaffhausen III (3 B)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>213</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Markus</td>
+        <td>Dieterle</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>33</td>
+        <td>Squashclub Allschwil</td>
+        <td>97.80</td>
+        <td>10</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)</td>
+    </tr><tr data-club="Squash Rackets Club Bern">
+        <td>214</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Thomas</td>
+        <td>Schmidt</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>97.61</td>
+        <td>6</td>
+        <td>Bern I (1 D)<br />
+Bern II (2 D)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>215</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Markus</td>
+        <td>Strösslin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>58</td>
+        <td>Squashclub Allschwil</td>
+        <td>97.49</td>
+        <td>11</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>216</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Mischa</td>
+        <td>Fischer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Squash Club Uster</td>
+        <td>97.28</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Appenzell">
+        <td>217</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Irvan</td>
+        <td>Bruderer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>45</td>
+        <td>Squashclub Appenzell</td>
+        <td>96.03</td>
+        <td>4</td>
+        <td>Appenzell I (1 A)</td>
+    </tr><tr data-club="Airgate Squash Club Zürich">
+        <td>218</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Daniel</td>
+        <td>Fürst</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>54</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>95.73</td>
+        <td>7</td>
+        <td>Airgate Zürich I (NLA)<br />
+Airgate Zürich II (NLB A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>219</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Arjen</td>
+        <td>Sietzema</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Grabs</td>
+        <td>95.17</td>
+        <td>9</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)</td>
+    </tr><tr data-club="Squash Club Stelz">
+        <td>220</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Michael</td>
+        <td>Pereira</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>40</td>
+        <td>Squash Club Stelz</td>
+        <td>95.12</td>
+        <td>4</td>
+        <td>Stelz Wil I (2 A)</td>
+    </tr><tr data-club="Squash Club Schaffhausen">
+        <td>221</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Philipp</td>
+        <td>Waldner</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>56</td>
+        <td>Squash Club Schaffhausen</td>
+        <td>94.59</td>
+        <td>7</td>
+        <td>Schaffhausen I (NLB A)<br />
+Schaffhausen III (3 B)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>222</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Nicolas</td>
+        <td>Diehm</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squash Club Royal Cham</td>
+        <td>94.52</td>
+        <td>11</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)<br />
+Royal Cham III (2 C)</td>
+    </tr><tr data-club="Airgate Squash Club Zürich">
+        <td>223</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Jürg</td>
+        <td>Niederberger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>54</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>94.29</td>
+        <td>8</td>
+        <td>Airgate Zürich I (NLA)<br />
+Airgate Zürich II (NLB A)</td>
+    </tr><tr data-club="UBS Squash Club Zürich">
+        <td>224</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Nick</td>
+        <td>Pile</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>53</td>
+        <td>UBS Squash Club Zürich</td>
+        <td>91.86</td>
+        <td>3</td>
+        <td>UBS Zürich (2 C)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>225</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Manolo</td>
+        <td>Schätti</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>91.35</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>226</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Dario Daniel</td>
+        <td>Gass</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>18</td>
+        <td>Squash Club Uster</td>
+        <td>90.19</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Airgate Squash Club Zürich">
+        <td>227</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Carlos</td>
+        <td>Kraft</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>89.35</td>
+        <td>9</td>
+        <td>Airgate Zürich I (NLA)<br />
+Airgate Zürich II (NLB A)<br />
+Airgate Zürich III (1 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Romandie">
+        <td>228</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Lisa</td>
+        <td>Bettoni</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>24</td>
+        <td>Squash Romandie</td>
+        <td>88.37</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>229</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Mikhail</td>
+        <td>Reutov</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Squash Club Royal Cham</td>
+        <td>88.36</td>
+        <td>12</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)<br />
+Royal Cham III (2 C)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Bödeli">
+        <td>230</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Monika</td>
+        <td>Burri</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>37</td>
+        <td>Squash Club Bödeli</td>
+        <td>87.97</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Fricktal">
+        <td>231</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Michel</td>
+        <td>Hess</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Fricktal</td>
+        <td>87.36</td>
+        <td>3</td>
+        <td>Squash Fricktal I (1 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>232</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Luan</td>
+        <td>Bislin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>86.53</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club 11">
+        <td>233</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Stefan</td>
+        <td>Iseli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>56</td>
+        <td>Squash Club 11</td>
+        <td>86.20</td>
+        <td>2</td>
+        <td>SC 11 (1 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Winterthur">
+        <td>234</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Kevin</td>
+        <td>Haltiner</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>18</td>
+        <td>Squash Winterthur</td>
+        <td>85.64</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>235</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Gian</td>
+        <td>Andrey</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>16</td>
+        <td>Squash Club Uster</td>
+        <td>85.54</td>
+        <td>20</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Winterthur">
+        <td>236</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Silvan</td>
+        <td>Erzinger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Winterthur</td>
+        <td>84.93</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Ruderbach">
+        <td>237</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Moreno</td>
+        <td>Zulian</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Club Ruderbach</td>
+        <td>84.86</td>
+        <td>5</td>
+        <td>Ruderbach I (1 A)<br />
+Ruderbach II (2 A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>238</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Michael</td>
+        <td>Singer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Club Grabs</td>
+        <td>83.68</td>
+        <td>10</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)</td>
+    </tr><tr data-club="Squash Club Quattro Willisau">
+        <td>239</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Paul</td>
+        <td>Setschi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>62</td>
+        <td>Squash Club Quattro Willisau</td>
+        <td>83.13</td>
+        <td>2</td>
+        <td>Willisau (3 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squashclub Allschwil">
+        <td>240</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Claudio</td>
+        <td>Mangione</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>50</td>
+        <td>Squashclub Allschwil</td>
+        <td>82.55</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Winterthur Red Lions">
+        <td>241</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Samuel</td>
+        <td>Krenger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>64</td>
+        <td>Winterthur Red Lions</td>
+        <td>82.48</td>
+        <td>1</td>
+        <td>Red Lions Winterthur (3 B)</td>
+    </tr><tr data-club="Squash Club Quattro Willisau">
+        <td>242</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Sascha</td>
+        <td>Künzli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>50</td>
+        <td>Squash Club Quattro Willisau</td>
+        <td>82.30</td>
+        <td>3</td>
+        <td>Willisau (3 D)</td>
+    </tr><tr data-club="Squash Club Region Bodensee">
+        <td>243</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Michael</td>
+        <td>Keller</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>40</td>
+        <td>Squash Club Region Bodensee</td>
+        <td>81.79</td>
+        <td>5</td>
+        <td>Region Bodensee I (NLB A)<br />
+Reg Bodensee II (2 A)</td>
+    </tr><tr data-club="Rohrdorferberg">
+        <td>244</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Patrick</td>
+        <td>Frei</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>Rohrdorferberg</td>
+        <td>81.03</td>
+        <td>3</td>
+        <td>Rohrdorferberg I (2 C)</td>
+    </tr><tr data-club="Squash Club 11">
+        <td>245</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Marcel</td>
+        <td>Kaufmann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>41</td>
+        <td>Squash Club 11</td>
+        <td>80.02</td>
+        <td>3</td>
+        <td>SC 11 (1 D)</td>
+    </tr><tr data-club="Squash Club Aarsports">
+        <td>246</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Thomas</td>
+        <td>Seebacher</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Club Aarsports</td>
+        <td>79.99</td>
+        <td>8</td>
+        <td>Aarsports I (NLB B)<br />
+Aarsports II (2 C)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>247</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Natasha</td>
+        <td>Smith</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>51</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>79.42</td>
+        <td>24</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)<br />
+Grasshopper V (1 C)<br />
+Grasshopper VI (2 B)</td>
+    </tr><tr data-club="Squash Club Sursee">
+        <td>248</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Noah</td>
+        <td>Möri</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Sursee</td>
+        <td>78.91</td>
+        <td>1</td>
+        <td>Sursee I (3 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Romandie">
+        <td>249</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Maxime</td>
+        <td>Rossier</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squash Romandie</td>
+        <td>78.59</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Vitis">
+        <td>250</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Simon</td>
+        <td>Zurschmiede</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>37</td>
+        <td>Squash Club Vitis</td>
+        <td>78.19</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Graubünden">
+        <td>251</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Hanspeter</td>
+        <td>Blunschi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>69</td>
+        <td>Squash Club Graubünden</td>
+        <td>78.14</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>252</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Matti</td>
+        <td>Guebey</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>78.09</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>253</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Demian</td>
+        <td>Oberhänsli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Squash Club Uster</td>
+        <td>77.16</td>
+        <td>21</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)<br />
+Uster VI (2 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>254</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Noé</td>
+        <td>Guebey</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>76.47</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Pilatus Kriens">
+        <td>255</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>David</td>
+        <td>Jacquemoud</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>76.31</td>
+        <td>19</td>
+        <td>Pilatus Kriens I (NLA)<br />
+Pilatus Kriens II (NLB B)<br />
+Pilatus Kriens III (1 B)<br />
+Pilatus Kriens IV (1 C)<br />
+Pilatus Kriens V (2 D)</td>
+    </tr><tr data-club="Squashclub St Gallen">
+        <td>256</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Ramon</td>
+        <td>Mock</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>31</td>
+        <td>Squashclub St Gallen</td>
+        <td>75.91</td>
+        <td>6</td>
+        <td>St. Gallen I (1 A)<br />
+St. Gallen II (3 A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>257</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Migayel</td>
+        <td>Atay</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Grabs</td>
+        <td>75.72</td>
+        <td>11</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)</td>
+    </tr><tr data-club="Squash Club Aarsports">
+        <td>258</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Marco</td>
+        <td>Kramer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>41</td>
+        <td>Squash Club Aarsports</td>
+        <td>75.26</td>
+        <td>9</td>
+        <td>Aarsports I (NLB B)<br />
+Aarsports II (2 C)<br />
+Aarsports III (3 C)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Lausanne">
+        <td>259</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Kahyna</td>
+        <td>Zryd</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>14</td>
+        <td>Squash Lausanne</td>
+        <td>75.18</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>260</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Dawid</td>
+        <td>Wojcik</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>33</td>
+        <td>Squash Club Grabs</td>
+        <td>75.03</td>
+        <td>12</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Rackets Club Bern">
+        <td>261</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Liam</td>
+        <td>Wallin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>11</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>74.71</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>262</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Linus</td>
+        <td>Vettiger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>27</td>
+        <td>Squashclub Allschwil</td>
+        <td>74.58</td>
+        <td>12</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Quattro Willisau">
+        <td>263</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Heinz</td>
+        <td>Hirschi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>62</td>
+        <td>Squash Club Quattro Willisau</td>
+        <td>72.29</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Wartau">
+        <td>264</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Cyril</td>
+        <td>Iselin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Club Wartau</td>
+        <td>72.17</td>
+        <td>1</td>
+        <td>Wartau (2 A)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>265</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Annina</td>
+        <td>Babotai</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>16</td>
+        <td>Squash Club Uster</td>
+        <td>71.73</td>
+        <td>22</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)<br />
+Uster VI (2 B)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>266</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Thomas</td>
+        <td>Hüppi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>49</td>
+        <td>Squash Club Sihltal</td>
+        <td>71.15</td>
+        <td>16</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)<br />
+Sihltal III (1 B)<br />
+Sihltal IV (1 C)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>267</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Martin</td>
+        <td>Büchel</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Squash Club Grabs</td>
+        <td>71.01</td>
+        <td>13</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)</td>
+    </tr><tr data-club="Squashclub Appenzell">
+        <td>268</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Yves</td>
+        <td>Hersche</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>43</td>
+        <td>Squashclub Appenzell</td>
+        <td>70.87</td>
+        <td>5</td>
+        <td>Appenzell I (1 A)<br />
+Appenzell II (3 A)</td>
+    </tr><tr data-club="Squash rackets Club Vaduz">
+        <td>269</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Gerhard</td>
+        <td>Schober</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>62</td>
+        <td>Squash rackets Club Vaduz</td>
+        <td>70.48</td>
+        <td>3</td>
+        <td>Vaduz I (NLA)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>270</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Lias</td>
+        <td>Lohri</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>14</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>70.20</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Grabs">
+        <td>271</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Sabrina</td>
+        <td>Triacca</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>35</td>
+        <td>Squash Club Grabs</td>
+        <td>70.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Sihltal">
+        <td>272</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Amael</td>
+        <td>Perucco</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squash Club Sihltal</td>
+        <td>69.44</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>273</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Othmar</td>
+        <td>Bernet</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>65</td>
+        <td>Squash Club Grabs</td>
+        <td>69.10</td>
+        <td>14</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)</td>
+    </tr><tr data-club="Squash Fricktal">
+        <td>274</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Philippe</td>
+        <td>Dutoit</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>29</td>
+        <td>Squash Fricktal</td>
+        <td>68.15</td>
+        <td>4</td>
+        <td>Squash Fricktal I (1 D)</td>
+    </tr><tr data-club="Squash Rackets Club Bern">
+        <td>275</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Thomas</td>
+        <td>Koch</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>67.58</td>
+        <td>7</td>
+        <td>Bern I (1 D)<br />
+Bern II (2 D)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>276</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Nico</td>
+        <td>Heiniger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>25</td>
+        <td>Squash Club Uster</td>
+        <td>67.50</td>
+        <td>23</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)<br />
+Uster VI (2 B)</td>
+    </tr><tr data-club="Squash Club Sursee">
+        <td>277</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Raphael</td>
+        <td>Bühlmann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>32</td>
+        <td>Squash Club Sursee</td>
+        <td>65.95</td>
+        <td>2</td>
+        <td>Sursee I (3 D)</td>
+    </tr><tr data-club="Squash Club Aarsports">
+        <td>278</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Massimo</td>
+        <td>Denicola</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>40</td>
+        <td>Squash Club Aarsports</td>
+        <td>65.74</td>
+        <td>10</td>
+        <td>Aarsports I (NLB B)<br />
+Aarsports II (2 C)<br />
+Aarsports III (3 C)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Winterthur">
+        <td>279</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Alexander</td>
+        <td>Leggett</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>19</td>
+        <td>Squash Winterthur</td>
+        <td>64.43</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>280</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Fabio</td>
+        <td>Ferrarini</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>11</td>
+        <td>Squash Club Uster</td>
+        <td>64.36</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>281</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Stephanie</td>
+        <td>Caviezel</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>39</td>
+        <td>Squash Club Grabs</td>
+        <td>63.04</td>
+        <td>15</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>282</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Monika</td>
+        <td>Bettoni</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>55</td>
+        <td>Squash Winterthur</td>
+        <td>62.56</td>
+        <td>9</td>
+        <td>Winterthur I (NLB A)<br />
+Winterthur II (1 C)<br />
+Winterthur III (1 B)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>283</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>André</td>
+        <td>Gattlen</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>61</td>
+        <td>Squashclub Allschwil</td>
+        <td>61.79</td>
+        <td>13</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)<br />
+Allschwil IV (2 D)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>284</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Sven</td>
+        <td>Stahler</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>31</td>
+        <td>Squash Club Grabs</td>
+        <td>61.49</td>
+        <td>16</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>285</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>David</td>
+        <td>Ackermann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Squash Club Uster</td>
+        <td>61.46</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Sursee">
+        <td>286</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Kevin</td>
+        <td>Gut</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>30</td>
+        <td>Squash Club Sursee</td>
+        <td>61.15</td>
+        <td>3</td>
+        <td>Sursee I (3 D)</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>287</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Manuela</td>
+        <td>Ebener</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>39</td>
+        <td>Squash Winterthur</td>
+        <td>60.89</td>
+        <td>10</td>
+        <td>Winterthur I (NLB A)<br />
+Winterthur II (1 C)<br />
+Winterthur III (1 B)</td>
+    </tr><tr data-club="Squash Club Burgdorf">
+        <td>288</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Serges</td>
+        <td>Schwarz</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Squash Club Burgdorf</td>
+        <td>59.77</td>
+        <td>1</td>
+        <td></td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Schaffhausen">
+        <td>289</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Georg</td>
+        <td>Wolff</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>33</td>
+        <td>Squash Club Schaffhausen</td>
+        <td>59.53</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Luzern">
+        <td>290</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Joel</td>
+        <td>Sticher</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>30</td>
+        <td>Squash Club Luzern</td>
+        <td>59.26</td>
+        <td>4</td>
+        <td>Luzern I (1 D)</td>
+    </tr><tr data-club="Squashclub Appenzell">
+        <td>291</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Maurus</td>
+        <td>Breitenmoser</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>42</td>
+        <td>Squashclub Appenzell</td>
+        <td>59.02</td>
+        <td>6</td>
+        <td>Appenzell I (1 A)<br />
+Appenzell II (3 A)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>292</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Lorin</td>
+        <td>Heslop</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>22</td>
+        <td>Squash Club Uster</td>
+        <td>57.68</td>
+        <td>24</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)<br />
+Uster VI (2 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="UBS Squash Club Zürich">
+        <td>293</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Hasan</td>
+        <td>Prati</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>56</td>
+        <td>UBS Squash Club Zürich</td>
+        <td>56.88</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Quattro Willisau">
+        <td>294</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Andreas</td>
+        <td>Gnehm</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>52</td>
+        <td>Squash Club Quattro Willisau</td>
+        <td>55.84</td>
+        <td>4</td>
+        <td>Willisau (3 D)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>295</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Sergio</td>
+        <td>Carrabs</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>57</td>
+        <td>Squash Club Grabs</td>
+        <td>54.61</td>
+        <td>17</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>296</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Marleina</td>
+        <td>Wirth</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>15</td>
+        <td>Squash Club Uster</td>
+        <td>54.10</td>
+        <td>25</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)<br />
+Uster VI (2 B)<br />
+Uster VII (3 B)</td>
+    </tr><tr data-club="Squash Club Swissair">
+        <td>297</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Florian</td>
+        <td>Dübendorfer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>54</td>
+        <td>Squash Club Swissair</td>
+        <td>53.92</td>
+        <td>3</td>
+        <td>Swissair (2 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>298</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Liam</td>
+        <td>Hug</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>14</td>
+        <td>Squash Club Uster</td>
+        <td>52.95</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Winterthur Red Lions">
+        <td>299</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Lukas</td>
+        <td>Leutwyler</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>58</td>
+        <td>Winterthur Red Lions</td>
+        <td>52.90</td>
+        <td>2</td>
+        <td>Red Lions Winterthur (3 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>300</td>
+        <td><span class="serie-badge serie-B2">B2</span></td>
+        <td>Carlo</td>
+        <td>Schätti</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>52.37</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Quattro Willisau">
+        <td>301</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Hans</td>
+        <td>Gut</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>64</td>
+        <td>Squash Club Quattro Willisau</td>
+        <td>51.56</td>
+        <td>5</td>
+        <td>Willisau (3 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Ruderbach">
+        <td>302</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Kay</td>
+        <td>Noworolski</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>32</td>
+        <td>Squash Club Ruderbach</td>
+        <td>51.06</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squashclub Appenzell">
+        <td>303</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Mia</td>
+        <td>Wettach</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>14</td>
+        <td>Squashclub Appenzell</td>
+        <td>50.62</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Grabs">
+        <td>304</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Tanja</td>
+        <td>Sätteli</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>29</td>
+        <td>Squash Club Grabs</td>
+        <td>50.45</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Sursee">
+        <td>305</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Simon</td>
+        <td>Denzler</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Sursee</td>
+        <td>49.85</td>
+        <td>4</td>
+        <td>Sursee I (3 D)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>306</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Michéle</td>
+        <td>Maurer</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>22</td>
+        <td>Squash Club Grabs</td>
+        <td>49.83</td>
+        <td>18</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>307</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Samuel</td>
+        <td>Arnold</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>36</td>
+        <td>Squash Club Royal Cham</td>
+        <td>49.58</td>
+        <td>13</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)<br />
+Royal Cham III (2 C)<br />
+Royal Cham IV (3 C)</td>
+    </tr><tr data-club="Winterthur Red Lions">
+        <td>308</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Jürgen</td>
+        <td>Steiner</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>68</td>
+        <td>Winterthur Red Lions</td>
+        <td>48.96</td>
+        <td>3</td>
+        <td>Red Lions Winterthur (3 B)</td>
+    </tr><tr data-club="Swiss Squash">
+        <td>309</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Remi</td>
+        <td>Kummer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>29</td>
+        <td>Swiss Squash</td>
+        <td>48.72</td>
+        <td>1</td>
+        <td></td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Sursee">
+        <td>310</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Laura</td>
+        <td>Zemp</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>13</td>
+        <td>Squash Club Sursee</td>
+        <td>48.54</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>311</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Dean</td>
+        <td>Sieber</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>47.69</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>312</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Andreas</td>
+        <td>Balcon</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>67</td>
+        <td>Squash Club Grabs</td>
+        <td>46.68</td>
+        <td>19</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr data-club="Squash Club Quattro Willisau">
+        <td>313</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Michael</td>
+        <td>Schwarz</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>60</td>
+        <td>Squash Club Quattro Willisau</td>
+        <td>46.60</td>
+        <td>6</td>
+        <td>Willisau (3 D)</td>
+    </tr><tr data-club="Squash Club Burgdorf">
+        <td>314</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Stefan</td>
+        <td>Riesen</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>36</td>
+        <td>Squash Club Burgdorf</td>
+        <td>45.01</td>
+        <td>2</td>
+        <td></td>
+    </tr><tr data-club="Squash Club Swissair">
+        <td>315</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Jörg</td>
+        <td>Mostert</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>57</td>
+        <td>Squash Club Swissair</td>
+        <td>44.94</td>
+        <td>4</td>
+        <td>Swissair (2 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>316</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Kento</td>
+        <td>Dunsch</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Uster</td>
+        <td>44.08</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Burgdorf">
+        <td>317</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Dominic</td>
+        <td>Roth</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Club Burgdorf</td>
+        <td>44.06</td>
+        <td>3</td>
+        <td></td>
+    </tr><tr data-club="Squash Club Stelz">
+        <td>318</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Eilan</td>
+        <td>Niederhauser</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Squash Club Stelz</td>
+        <td>43.06</td>
+        <td>5</td>
+        <td>Stelz Wil I (2 A)<br />
+Stelz Wil II (3 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Swiss Squash">
+        <td>319</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Ambrus</td>
+        <td>Weisz</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Swiss Squash</td>
+        <td>42.87</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Appenzell">
+        <td>320</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Christian</td>
+        <td>Ebneter</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>53</td>
+        <td>Squashclub Appenzell</td>
+        <td>42.74</td>
+        <td>7</td>
+        <td>Appenzell I (1 A)<br />
+Appenzell II (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>321</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Frank</td>
+        <td>Nerko</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Squash Club Uster</td>
+        <td>42.28</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Appenzell">
+        <td>322</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Tobias</td>
+        <td>Fritsche</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squashclub Appenzell</td>
+        <td>42.20</td>
+        <td>8</td>
+        <td>Appenzell I (1 A)<br />
+Appenzell II (3 A)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>323</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>André</td>
+        <td>Leu</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>46</td>
+        <td>Squash Club Uster</td>
+        <td>41.86</td>
+        <td>26</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)<br />
+Uster VI (2 B)<br />
+Uster VII (3 B)</td>
+    </tr><tr data-club="Airgate Squash Club Zürich">
+        <td>324</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Christophe</td>
+        <td>Kurkdjian</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>29</td>
+        <td>Airgate Squash Club Zürich</td>
+        <td>41.43</td>
+        <td>10</td>
+        <td>Airgate Zürich I (NLA)<br />
+Airgate Zürich II (NLB A)<br />
+Airgate Zürich III (1 B)</td>
+    </tr><tr data-club="Squash Club Quattro Willisau">
+        <td>325</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Sascha</td>
+        <td>Aschwanden</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>42</td>
+        <td>Squash Club Quattro Willisau</td>
+        <td>40.85</td>
+        <td>7</td>
+        <td>Willisau (3 D)</td>
+    </tr><tr data-club="Rohrdorferberg">
+        <td>326</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Philipp</td>
+        <td>Richner</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Rohrdorferberg</td>
+        <td>40.41</td>
+        <td>4</td>
+        <td>Rohrdorferberg I (2 C)</td>
+    </tr><tr data-club="Squash Club Bödeli">
+        <td>327</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Pascal</td>
+        <td>Beetschen</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>27</td>
+        <td>Squash Club Bödeli</td>
+        <td>40.30</td>
+        <td>5</td>
+        <td>Bödeli Wilderswil I (NLB B)<br />
+Bödeli Wilderswil II (2 D)</td>
+    </tr><tr data-club="Squash rackets Club Vaduz">
+        <td>328</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Daniele</td>
+        <td>Schober</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>32</td>
+        <td>Squash rackets Club Vaduz</td>
+        <td>39.92</td>
+        <td>4</td>
+        <td>Vaduz I (NLA)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>329</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Tiberiu</td>
+        <td>Jahn-gerlicze</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>58</td>
+        <td>Squashclub Allschwil</td>
+        <td>39.05</td>
+        <td>14</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)<br />
+Allschwil IV (2 D)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>330</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Cyrus</td>
+        <td>Morsali</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>43</td>
+        <td>Squash Club Uster</td>
+        <td>38.70</td>
+        <td>27</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)<br />
+Uster VI (2 B)<br />
+Uster VII (3 B)</td>
+    </tr><tr data-club="Squash Club Quattro Willisau">
+        <td>331</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Jonas</td>
+        <td>Fischer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>38</td>
+        <td>Squash Club Quattro Willisau</td>
+        <td>38.43</td>
+        <td>8</td>
+        <td>Willisau (3 D)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>332</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Mjriam</td>
+        <td>Frei</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>43</td>
+        <td>Squash Club Grabs</td>
+        <td>38.27</td>
+        <td>20</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>333</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Sibylle</td>
+        <td>Hellstern</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>57</td>
+        <td>Squashclub Allschwil</td>
+        <td>38.25</td>
+        <td>15</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)<br />
+Allschwil IV (2 D)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>334</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Christian</td>
+        <td>Homberger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>Squash Club Grabs</td>
+        <td>38.05</td>
+        <td>21</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>335</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Filip</td>
+        <td>Rolenec</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>29</td>
+        <td>Squash Club Royal Cham</td>
+        <td>37.14</td>
+        <td>14</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)<br />
+Royal Cham III (2 C)<br />
+Royal Cham IV (3 C)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>336</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Matej</td>
+        <td>Beljo</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Royal Cham</td>
+        <td>36.98</td>
+        <td>15</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)<br />
+Royal Cham III (2 C)<br />
+Royal Cham IV (3 C)</td>
+    </tr><tr data-club="Squash Club Supernova">
+        <td>337</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Patrick</td>
+        <td>Dell&#039;Oca</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>43</td>
+        <td>Squash Club Supernova</td>
+        <td>36.96</td>
+        <td>3</td>
+        <td>Supernova Seegarten I (1 A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>338</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Dietmar</td>
+        <td>Lamprecht</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>66</td>
+        <td>Squash Club Grabs</td>
+        <td>36.50</td>
+        <td>22</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Lausanne">
+        <td>339</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Jules</td>
+        <td>Perrin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Squash Lausanne</td>
+        <td>34.82</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>340</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Reka</td>
+        <td>Gaszmann</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>38</td>
+        <td>Squash Club Grabs</td>
+        <td>34.58</td>
+        <td>23</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>341</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Bernardo</td>
+        <td>Dos santos</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>34.19</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>342</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Rafael</td>
+        <td>Sägesser</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>14</td>
+        <td>Squash Club Uster</td>
+        <td>31.97</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>343</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Paulus</td>
+        <td>Göktas</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Grabs</td>
+        <td>31.64</td>
+        <td>24</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squashclub Allschwil">
+        <td>344</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Gianin</td>
+        <td>Lisser</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squashclub Allschwil</td>
+        <td>30.73</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>345</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Jean-Daniel</td>
+        <td>Andrey</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>58</td>
+        <td>Squash Club Grabs</td>
+        <td>30.73</td>
+        <td>25</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr data-club="Squash Rackets Club Bern">
+        <td>346</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Robin</td>
+        <td>Schaub</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>49</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>30.39</td>
+        <td>8</td>
+        <td>Bern I (1 D)<br />
+Bern II (2 D)</td>
+    </tr><tr data-club="Squashclub St Gallen">
+        <td>347</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Joel</td>
+        <td>Schmid</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>34</td>
+        <td>Squashclub St Gallen</td>
+        <td>30.11</td>
+        <td>7</td>
+        <td>St. Gallen I (1 A)<br />
+St. Gallen II (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>348</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Linus</td>
+        <td>Plaza</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Uster</td>
+        <td>30.08</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Sursee">
+        <td>349</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Marco</td>
+        <td>Steinmann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>39</td>
+        <td>Squash Club Sursee</td>
+        <td>30.07</td>
+        <td>5</td>
+        <td>Sursee I (3 D)<br />
+Sursee II (3 D)</td>
+    </tr><tr data-club="Squash Club Region Bodensee">
+        <td>350</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Árpád</td>
+        <td>Pollman</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>37</td>
+        <td>Squash Club Region Bodensee</td>
+        <td>29.33</td>
+        <td>6</td>
+        <td>Region Bodensee I (NLB A)<br />
+Reg Bodensee II (2 A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>351</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Fabian</td>
+        <td>Mächler</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squash Club Grabs</td>
+        <td>27.49</td>
+        <td>26</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squashclub Allschwil">
+        <td>352</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Fidel</td>
+        <td>Pavon Rodriguez</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>11</td>
+        <td>Squashclub Allschwil</td>
+        <td>27.03</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>353</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Julia</td>
+        <td>Jacquemoud</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>12</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>26.67</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Rackets Club Bern">
+        <td>354</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Ahmad</td>
+        <td>Zein assi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>26.66</td>
+        <td>9</td>
+        <td>Bern I (1 D)<br />
+Bern II (2 D)<br />
+Bern-Burgdorf (3 D)</td>
+    </tr><tr data-club="Squash Club Luzern">
+        <td>355</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Nicola</td>
+        <td>Schwab</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>29</td>
+        <td>Squash Club Luzern</td>
+        <td>26.23</td>
+        <td>5</td>
+        <td>Luzern I (1 D)<br />
+Luzern II (3 D)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>356</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Tabea</td>
+        <td>Zech</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>29</td>
+        <td>Squashclub Allschwil</td>
+        <td>26.01</td>
+        <td>16</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)<br />
+Allschwil IV (2 D)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>357</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Elisabeth</td>
+        <td>Lamprecht</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>67</td>
+        <td>Squash Club Grabs</td>
+        <td>25.76</td>
+        <td>27</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>358</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Mia Luana</td>
+        <td>Beros</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>13</td>
+        <td>Squash Club Uster</td>
+        <td>25.75</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>359</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Vanessa</td>
+        <td>Hansmann</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>15</td>
+        <td>Squash Club Uster</td>
+        <td>25.44</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Appenzell">
+        <td>360</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Philipp</td>
+        <td>Lang</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>43</td>
+        <td>Squashclub Appenzell</td>
+        <td>24.44</td>
+        <td>9</td>
+        <td>Appenzell I (1 A)<br />
+Appenzell II (3 A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>361</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Florian</td>
+        <td>Novak</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>48</td>
+        <td>Squash Club Grabs</td>
+        <td>23.99</td>
+        <td>28</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr data-club="Squash Club Stelz">
+        <td>362</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Marco</td>
+        <td>Blöchlinger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>34</td>
+        <td>Squash Club Stelz</td>
+        <td>23.02</td>
+        <td>6</td>
+        <td>Stelz Wil I (2 A)<br />
+Stelz Wil II (3 B)</td>
+    </tr><tr data-club="Squash Winterthur">
+        <td>363</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Laura</td>
+        <td>Bettoni</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>26</td>
+        <td>Squash Winterthur</td>
+        <td>21.91</td>
+        <td>11</td>
+        <td>Winterthur I (NLB A)<br />
+Winterthur II (1 C)<br />
+Winterthur III (1 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>364</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Elena</td>
+        <td>Baschung</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>14</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>21.73</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Grasshopper Club Zürich">
+        <td>365</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Yves</td>
+        <td>Patak</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>56</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>21.30</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squashclub Allschwil">
+        <td>366</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Jessica</td>
+        <td>Müller</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>11</td>
+        <td>Squashclub Allschwil</td>
+        <td>21.25</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>367</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Shawn</td>
+        <td>Ammann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Squash Club Uster</td>
+        <td>20.67</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Aarsports">
+        <td>368</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Leo</td>
+        <td>Nicholls</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>34</td>
+        <td>Squash Club Aarsports</td>
+        <td>20.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>369</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Fred</td>
+        <td>Bucher</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>53</td>
+        <td>Squash Club Grabs</td>
+        <td>19.89</td>
+        <td>29</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>370</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Morris</td>
+        <td>Degen</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>10</td>
+        <td>Squash Club Uster</td>
+        <td>18.24</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>371</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Stefan</td>
+        <td>Eggenberger</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>36</td>
+        <td>Squash Club Grabs</td>
+        <td>17.76</td>
+        <td>30</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr data-club="Squash Club Stelz">
+        <td>372</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Philemon</td>
+        <td>Zürcher</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>26</td>
+        <td>Squash Club Stelz</td>
+        <td>15.69</td>
+        <td>7</td>
+        <td>Stelz Wil I (2 A)<br />
+Stelz Wil II (3 B)</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>373</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Sarina</td>
+        <td>Baumgartner</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>20</td>
+        <td>Squash Club Sihltal</td>
+        <td>14.38</td>
+        <td>17</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)<br />
+Sihltal III (1 B)<br />
+Sihltal IV (1 C)<br />
+Sihltal V (3 C)</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>374</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Anna Barbara</td>
+        <td>Bernhard</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>49</td>
+        <td>Squashclub Allschwil</td>
+        <td>14.10</td>
+        <td>17</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)<br />
+Allschwil IV (2 D)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>375</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Fabian</td>
+        <td>Hänggi</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>42</td>
+        <td>Squash Club Royal Cham</td>
+        <td>13.56</td>
+        <td>16</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)<br />
+Royal Cham III (2 C)<br />
+Royal Cham IV (3 C)</td>
+    </tr><tr data-club="Squash Club Sursee">
+        <td>376</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Pascal</td>
+        <td>Barmettler</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>35</td>
+        <td>Squash Club Sursee</td>
+        <td>13.42</td>
+        <td>6</td>
+        <td>Sursee I (3 D)<br />
+Sursee II (3 D)</td>
+    </tr><tr data-club="Squash Club Uster">
+        <td>377</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Simone</td>
+        <td>Ferrarini</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>43</td>
+        <td>Squash Club Uster</td>
+        <td>13.00</td>
+        <td>28</td>
+        <td>Uster I (NLA)<br />
+Farmteam Uster (NLA)<br />
+Energy Uster (NLB A)<br />
+Uster IV (1 B)<br />
+Uster V (2 B)<br />
+Uster VI (2 B)<br />
+Uster VII (3 B)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>378</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Michèle</td>
+        <td>Schwarz-Rellstab</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>41</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>12.60</td>
+        <td>25</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)<br />
+Grasshopper V (1 C)<br />
+Grasshopper VI (2 B)</td>
+    </tr><tr data-club="Squashclub St Gallen">
+        <td>379</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Fabian</td>
+        <td>Venzin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>34</td>
+        <td>Squashclub St Gallen</td>
+        <td>12.41</td>
+        <td>8</td>
+        <td>St. Gallen I (1 A)<br />
+St. Gallen II (3 A)</td>
+    </tr><tr data-club="Squash Club Region Bodensee">
+        <td>380</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Ivo</td>
+        <td>Wallnöfer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>54</td>
+        <td>Squash Club Region Bodensee</td>
+        <td>12.18</td>
+        <td>7</td>
+        <td>Region Bodensee I (NLB A)<br />
+Reg Bodensee II (2 A)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>381</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Sascha</td>
+        <td>Hoederath</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>55</td>
+        <td>Squash Club Grabs</td>
+        <td>11.45</td>
+        <td>31</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr data-club="Squash Club Royal Cham">
+        <td>382</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Ralph</td>
+        <td>Zimmermann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>49</td>
+        <td>Squash Club Royal Cham</td>
+        <td>11.39</td>
+        <td>17</td>
+        <td>Royal Cham I (NLB B)<br />
+Royal Cham II (2 B)<br />
+Royal Cham III (2 C)<br />
+Royal Cham IV (3 C)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Stelz">
+        <td>383</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Zoran</td>
+        <td>Raljevic</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>61</td>
+        <td>Squash Club Stelz</td>
+        <td>10.57</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Rackets Club Bern">
+        <td>384</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Raffaele</td>
+        <td>Ospelt</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>31</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>10.13</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Sursee">
+        <td>385</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Zoé</td>
+        <td>Möri</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>17</td>
+        <td>Squash Club Sursee</td>
+        <td>8.93</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Pilatus Kriens">
+        <td>386</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Salome</td>
+        <td>Koch</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>14</td>
+        <td>Squash Club Pilatus Kriens</td>
+        <td>8.38</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Luzern">
+        <td>387</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Robin</td>
+        <td>Lütolf</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>32</td>
+        <td>Squash Club Luzern</td>
+        <td>8.29</td>
+        <td>6</td>
+        <td>Luzern I (1 D)<br />
+Luzern II (3 D)</td>
+    </tr><tr data-club="Grasshopper Club Zürich">
+        <td>388</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Patricia</td>
+        <td>Neupert</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>44</td>
+        <td>Grasshopper Club Zürich</td>
+        <td>8.21</td>
+        <td>26</td>
+        <td>Grasshopper I (NLA)<br />
+Grasshopper Legends (NLB B)<br />
+Grasshopper III (NLB A)<br />
+Grasshopper IV (1 B)<br />
+Grasshopper V (1 C)<br />
+Grasshopper VI (2 B)</td>
+    </tr><tr data-club="Winterthur Red Lions">
+        <td>389</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Jürg</td>
+        <td>Ender</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>50</td>
+        <td>Winterthur Red Lions</td>
+        <td>7.52</td>
+        <td>4</td>
+        <td>Red Lions Winterthur (3 B)</td>
+    </tr><tr data-club="Squash Club Luzern">
+        <td>390</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Fabio</td>
+        <td>Landerer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squash Club Luzern</td>
+        <td>4.32</td>
+        <td>7</td>
+        <td>Luzern I (1 D)<br />
+Luzern II (3 D)</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>391</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Natascha</td>
+        <td>Morrone</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>26</td>
+        <td>Squash Club Grabs</td>
+        <td>4.20</td>
+        <td>32</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash rackets Club Vaduz">
+        <td>392</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Max</td>
+        <td>Dubiel-Teleszynski</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Squash rackets Club Vaduz</td>
+        <td>3.49</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Sursee">
+        <td>393</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Helena</td>
+        <td>Rutkowska</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>14</td>
+        <td>Squash Club Sursee</td>
+        <td>2.90</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Lausanne">
+        <td>394</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Xavier</td>
+        <td>Perrin</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>51</td>
+        <td>Squash Lausanne</td>
+        <td>1.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Stelz">
+        <td>395</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Nicholas</td>
+        <td>Harre</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>68</td>
+        <td>Squash Club Stelz</td>
+        <td>0.55</td>
+        <td>8</td>
+        <td>Stelz Wil I (2 A)<br />
+Stelz Wil II (3 B)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>396</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Sereina</td>
+        <td>Hermann</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>11</td>
+        <td>Squash Club Uster</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Sihltal">
+        <td>397</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Christoph</td>
+        <td>Hänni</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>42</td>
+        <td>Squash Club Sihltal</td>
+        <td>0.00</td>
+        <td>18</td>
+        <td>Sihltal I (NLA)<br />
+Sihltal II (NLB B)<br />
+Sihltal III (1 B)<br />
+Sihltal IV (1 C)<br />
+Sihltal V (3 C)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Sursee">
+        <td>398</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Lara</td>
+        <td>Leib</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>14</td>
+        <td>Squash Club Sursee</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>399</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Maria</td>
+        <td>Unternährer</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>29</td>
+        <td>Squashclub Allschwil</td>
+        <td>0.00</td>
+        <td>18</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)<br />
+Allschwil IV (2 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>400</td>
+        <td><span class="serie-badge serie-B3">B3</span></td>
+        <td>Armando</td>
+        <td>Adelantado</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>10</td>
+        <td>Squash Club Uster</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squashclub St Gallen">
+        <td>401</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Rico</td>
+        <td>Graf</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>34</td>
+        <td>Squashclub St Gallen</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Sihltal">
+        <td>402</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Yusuf</td>
+        <td>Aboelfarh</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>13</td>
+        <td>Squash Club Sihltal</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Heimberg">
+        <td>403</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>René</td>
+        <td>Nüssli</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>73</td>
+        <td>Squash Heimberg</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>404</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Leevi</td>
+        <td>Kuonen Queijo</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>11</td>
+        <td>Squash Club Uster</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Swiss Squash">
+        <td>405</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Nikolaj Maksim</td>
+        <td>Stenzel</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>10</td>
+        <td>Swiss Squash</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub St Gallen">
+        <td>406</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Aron</td>
+        <td>Schmid</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>24</td>
+        <td>Squashclub St Gallen</td>
+        <td>0.00</td>
+        <td>9</td>
+        <td>St. Gallen I (1 A)<br />
+St. Gallen II (3 A)</td>
+    </tr><tr data-club="Squash Club Bödeli">
+        <td>407</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Beat</td>
+        <td>Zimmermann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>57</td>
+        <td>Squash Club Bödeli</td>
+        <td>0.00</td>
+        <td>6</td>
+        <td>Bödeli Wilderswil I (NLB B)<br />
+Bödeli Wilderswil II (2 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Sursee">
+        <td>408</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Leonie</td>
+        <td>Bucher</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>11</td>
+        <td>Squash Club Sursee</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Sursee">
+        <td>409</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Manuela</td>
+        <td>Tschudi</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>10</td>
+        <td>Squash Club Sursee</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Swissair">
+        <td>410</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Roger</td>
+        <td>Schweizer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>44</td>
+        <td>Squash Club Swissair</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>411</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Sven</td>
+        <td>Stybalkowski</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>16</td>
+        <td>Squash Club Uster</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squash Club Grabs">
+        <td>412</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Eliane</td>
+        <td>Ebnöther</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>36</td>
+        <td>Squash Club Grabs</td>
+        <td>0.00</td>
+        <td>33</td>
+        <td>Grabs I (NLB A)<br />
+Grabs II (1 A)<br />
+Grabs III (2 A)<br />
+Grabs IV (3 A)<br />
+Grabs V (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>413</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Linus</td>
+        <td>Plaza</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>15</td>
+        <td>Squash Club Uster</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Winterthur Red Lions">
+        <td>414</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Luca</td>
+        <td>Krenger</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>31</td>
+        <td>Winterthur Red Lions</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Schaffhausen">
+        <td>415</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Andreas</td>
+        <td>Liehl</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>34</td>
+        <td>Squash Club Schaffhausen</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Appenzell">
+        <td>416</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Timo</td>
+        <td>Wettach</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>20</td>
+        <td>Squashclub Appenzell</td>
+        <td>0.00</td>
+        <td>10</td>
+        <td>Appenzell I (1 A)<br />
+Appenzell II (3 A)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Aarsports">
+        <td>417</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Roger</td>
+        <td>Kemp</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>42</td>
+        <td>Squash Club Aarsports</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>418</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Kai</td>
+        <td>Stybalkowski</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>9</td>
+        <td>Squash Club Uster</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Swiss Squash">
+        <td>419</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Simon</td>
+        <td>Zimmermann</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Swiss Squash</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr data-club="Squashclub Allschwil">
+        <td>420</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Elisa maria</td>
+        <td>Aschmann</td>
+        <td><span class="gender-badge gender-female">F</span></td>
+        <td>19</td>
+        <td>Squashclub Allschwil</td>
+        <td>0.00</td>
+        <td>19</td>
+        <td>Allschwil I (NLB B)<br />
+Allschwil II (1 D)<br />
+Allschwil III (2 C)<br />
+Allschwil IV (2 D)</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Region Bodensee">
+        <td>421</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Joël</td>
+        <td>Keller</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>28</td>
+        <td>Squash Club Region Bodensee</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Rackets Club Bern">
+        <td>422</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Martin</td>
+        <td>Stofer</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>60</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Romandie">
+        <td>423</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Maxime</td>
+        <td>Gagnaux</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>17</td>
+        <td>Squash Romandie</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Rackets Club Bern">
+        <td>424</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Pascal</td>
+        <td>Lipp</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>25</td>
+        <td>Squash Rackets Club Bern</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squashclub St Gallen">
+        <td>425</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Cedric</td>
+        <td>Niklaus</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>29</td>
+        <td>Squashclub St Gallen</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>426</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Dennis</td>
+        <td>Kozhevnikov</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>12</td>
+        <td>Squash Club Uster</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr><tr class="no-eligible-teams" data-club="Squash Club Uster">
+        <td>427</td>
+        <td><span class="serie-badge serie-C1">C1</span></td>
+        <td>Nerko</td>
+        <td>Marek</td>
+        <td><span class="gender-badge gender-male">H</span></td>
+        <td>46</td>
+        <td>Squash Club Uster</td>
+        <td>0.00</td>
+        <td>N/A</td>
+        <td>All teams</td>
+    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Liste des clubs depuis PHP
+        const clubs = ["Airgate Squash Club Z\u00fcrich","Carnivals Squash Center","Grasshopper Club Z\u00fcrich","Kriens Panthers","Rohrdorferberg","Squash Club 11","Squash Club Aarsports","Squash Club Burgdorf","Squash Club B\u00f6deli","Squash Club Eglisee","Squash Club Grabs","Squash Club Graub\u00fcnden","Squash Club Luzern","Squash Club Pilatus Kriens","Squash Club Quattro Willisau","Squash Club Region Bodensee","Squash Club Royal Cham","Squash Club Ruderbach","Squash Club Schaffhausen","Squash Club Sihltal","Squash Club Stelz","Squash Club Supernova","Squash Club Sursee","Squash Club Swissair","Squash Club Uster","Squash Club Vitis","Squash Club Wartau","Squash Fricktal","Squash Heimberg","Squash Lausanne","Squash Rackets Club Bern","Squash Romandie","Squash Winterthur","Squash rackets Club Vaduz","Squashclub Allschwil","Squashclub Appenzell","Squashclub St Gallen","Swiss Squash","Team Swiss Racketlon","UBS Squash Club Z\u00fcrich","Winterthur Red Lions"];
+        let allRows = [];
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialisation
+            allRows = Array.from(document.querySelectorAll('#dataTable tbody tr'));
+            initializeClubSelector();
+            updateStats();
+            
+            // Event listeners
+            document.getElementById('clubSearch').addEventListener('input', handleClubSearch);
+            document.getElementById('clubFilter').addEventListener('change', handleClubFilter);
+        });
+
+        function initializeClubSelector() {
+            const select = document.getElementById('clubFilter');
+            
+            // Ajouter toutes les options de clubs
+            clubs.forEach(club => {
+                const option = document.createElement('option');
+                option.value = club;
+                option.textContent = club;
+                select.appendChild(option);
+            });
+        }
+
+        function handleClubSearch() {
+            const searchTerm = document.getElementById('clubSearch').value.toLowerCase();
+            const select = document.getElementById('clubFilter');
+            
+            // Filtrer les options du select
+            Array.from(select.options).forEach(option => {
+                if (option.value === '' || option.textContent.toLowerCase().includes(searchTerm)) {
+                    option.style.display = '';
+                } else {
+                    option.style.display = 'none';
+                }
+            });
+            
+            // Si une seule option correspond (en plus de "Tous"), la sélectionner
+            const visibleOptions = Array.from(select.options).filter(opt => opt.style.display !== 'none' && opt.value !== '');
+            if (visibleOptions.length === 1) {
+                select.value = visibleOptions[0].value;
+                handleClubFilter();
+            }
+        }
+
+        function handleClubFilter() {
+            const selectedClub = document.getElementById('clubFilter').value;
+            
+            allRows.forEach(row => {
+                const rowClub = row.getAttribute('data-club');
+                
+                if (selectedClub === '' || rowClub === selectedClub) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+            
+            // Appliquer aussi le filtre texte si il y en a un
+            filterTable();
+            updateStats();
+        }
+
+        function filterTable() {
+            const filter = document.getElementById('filter').value.toLowerCase();
+            const clubFilter = document.getElementById('clubFilter').value;
+            
+            allRows.forEach(row => {
+                const rowClub = row.getAttribute('data-club');
+                const text = row.textContent.toLowerCase();
+                
+                const matchesClub = clubFilter === '' || rowClub === clubFilter;
+                const matchesText = text.includes(filter);
+                
+                row.style.display = (matchesClub && matchesText) ? '' : 'none';
+            });
+            
+            updateStats();
+        }
+
+        function updateStats() {
+            const totalPlayers = allRows.length;
+            const visibleRows = allRows.filter(row => row.style.display !== 'none');
+            const visiblePlayers = visibleRows.length;
+            
+            document.getElementById('totalPlayers').textContent = `Total: ${totalPlayers} players`;
+            
+            if (visiblePlayers !== totalPlayers) {
+                document.getElementById('filteredPlayers').textContent = `Displayed: ${visiblePlayers} players`;
+                document.getElementById('filteredPlayers').style.display = 'inline';
+            } else {
+                document.getElementById('filteredPlayers').style.display = 'none';
+            }
+        }
+
+        // Fonction pour réinitialiser tous les filtres
+        function resetFilters() {
+            document.getElementById('clubSearch').value = '';
+            document.getElementById('clubFilter').value = '';
+            document.getElementById('filter').value = '';
+            
+            allRows.forEach(row => {
+                row.style.display = '';
+            });
+            
+            updateStats();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialisation
+            allRows = Array.from(document.querySelectorAll('#dataTable tbody tr'));
+            initializeClubSelector();
+            
+            // Récupérer le paramètre club depuis l'URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const clubParam = urlParams.get('club');
+
+            // Présélectionner le club si le paramètre existe
+            if (clubParam) {
+                const select = document.getElementById('clubFilter');
+                // Décoder les caractères spéciaux (au cas où)
+                const decodedClub = decodeURIComponent(clubParam);
+                
+                // Chercher le club (insensible à la casse)
+                const matchingOption = Array.from(select.options).find(option => 
+                    option.value.toLowerCase() === decodedClub.toLowerCase()
+                );
+                
+                if (matchingOption) {
+                    select.value = matchingOption.value;
+                    handleClubFilter(); // Appliquer le filtre
+                }
+            }
+            
+            updateStats();
+            
+            // Event listeners
+            document.getElementById('clubSearch').addEventListener('input', handleClubSearch);
+            document.getElementById('clubFilter').addEventListener('change', handleClubFilter);
+        });
+    </script>
+</body>
+</html>

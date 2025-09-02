@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interclubs Club Ranking</title>
+    <link rel="stylesheet" href="style.css?1">
+    <link rel="shortcut icon" type="image/png" href="favicon.ico">
+</head>
+<body>
+    <div class="header-fixed">
+        <div class="container">
+            <div class="header">
+                <div class="logos-left">
+                    <img src="SwissSquash_Logo_wide.svg" alt="Swiss Squash" class="logo">
+                </div>
+                
+                <h1>Interclubs Club Ranking</h1>
+                
+            </div>
+            
+            <div class="controls">
+                <div class="club-selector">
+                    <label for="clubFilter">Club:</label>
+                    <div class="club-input-container">
+                        <input type="hidden" id="clubSearch" placeholder="Please select a club...">
+                        <select id="clubFilter">
+                            <option value="">All clubs</option>
+                        </select>
+                        <a href="#" id="clubLink" class="club-link" style="display: none;">🔗</a>
+                    </div>
+                </div>
+
+                <input type="text" id="filter" placeholder="Filter results..." onkeyup="filterTable()">
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="stats">
+            <span id="totalPlayers">Total: 0 players</span>
+            <span id="filteredPlayers"></span>
+        </div>
+        
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Nat. rank</th>
+                        <th>Nat. serie</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Club</th>
+                        <th>Points</th>
+                        <th>Club rank</th>
+                        <th>Can play for...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{TABLE_ROWS}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Liste des clubs depuis PHP
+        const clubs = {{CLUBS_JSON}};
+        let allRows = [];
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialisation
+            allRows = Array.from(document.querySelectorAll('#dataTable tbody tr'));
+            initializeClubSelector();
+            updateStats();
+            
+            // Event listeners
+            document.getElementById('clubSearch').addEventListener('input', handleClubSearch);
+            document.getElementById('clubFilter').addEventListener('change', handleClubFilter);
+        });
+
+        function initializeClubSelector() {
+            const select = document.getElementById('clubFilter');
+            
+            // Ajouter toutes les options de clubs
+            clubs.forEach(club => {
+                const option = document.createElement('option');
+                option.value = club;
+                option.textContent = club;
+                select.appendChild(option);
+            });
+        }
+
+        function handleClubSearch() {
+            const searchTerm = document.getElementById('clubSearch').value.toLowerCase();
+            const select = document.getElementById('clubFilter');
+            
+            // Filtrer les options du select
+            Array.from(select.options).forEach(option => {
+                if (option.value === '' || option.textContent.toLowerCase().includes(searchTerm)) {
+                    option.style.display = '';
+                } else {
+                    option.style.display = 'none';
+                }
+            });
+            
+            // Si une seule option correspond (en plus de "Tous"), la sélectionner
+            const visibleOptions = Array.from(select.options).filter(opt => opt.style.display !== 'none' && opt.value !== '');
+            if (visibleOptions.length === 1) {
+                select.value = visibleOptions[0].value;
+                handleClubFilter();
+            }
+        }
+
+        function handleClubFilter() {
+            const selectedClub = document.getElementById('clubFilter').value;
+            const clubLink = document.getElementById('clubLink');
+            
+            // Gérer l'affichage et l'URL du lien
+            if (selectedClub) {
+                clubLink.href = `?club=${encodeURIComponent(selectedClub)}`;
+                clubLink.style.display = 'inline-block';
+            } else {
+                clubLink.style.display = 'none';
+            }
+            
+            allRows.forEach(row => {
+                const rowClub = row.getAttribute('data-club');
+                
+                if (selectedClub === '' || rowClub === selectedClub) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+            
+            // Appliquer aussi le filtre texte si il y en a un
+            filterTable();
+            updateStats();
+        }
+
+        function filterTable() {
+            const filter = document.getElementById('filter').value.toLowerCase();
+            const clubFilter = document.getElementById('clubFilter').value;
+            
+            allRows.forEach(row => {
+                const rowClub = row.getAttribute('data-club');
+                const text = row.textContent.toLowerCase();
+                
+                const matchesClub = clubFilter === '' || rowClub === clubFilter;
+                const matchesText = text.includes(filter);
+                
+                row.style.display = (matchesClub && matchesText) ? '' : 'none';
+            });
+            
+            updateStats();
+        }
+
+        function updateStats() {
+            const totalPlayers = allRows.length;
+            const visibleRows = allRows.filter(row => row.style.display !== 'none');
+            const visiblePlayers = visibleRows.length;
+            
+            document.getElementById('totalPlayers').textContent = `Total: ${totalPlayers} players`;
+            
+            if (visiblePlayers !== totalPlayers) {
+                document.getElementById('filteredPlayers').textContent = `Displayed: ${visiblePlayers} players`;
+                document.getElementById('filteredPlayers').style.display = 'inline';
+            } else {
+                document.getElementById('filteredPlayers').style.display = 'none';
+            }
+        }
+
+        // Fonction pour réinitialiser tous les filtres
+        function resetFilters() {
+            document.getElementById('clubSearch').value = '';
+            document.getElementById('clubFilter').value = '';
+            document.getElementById('filter').value = '';
+            
+            allRows.forEach(row => {
+                row.style.display = '';
+            });
+            
+            updateStats();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialisation
+            allRows = Array.from(document.querySelectorAll('#dataTable tbody tr'));
+            initializeClubSelector();
+            
+            // Récupérer le paramètre club depuis l'URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const clubParam = urlParams.get('club');
+
+            // Présélectionner le club si le paramètre existe
+            if (clubParam) {
+                const select = document.getElementById('clubFilter');
+                // Décoder les caractères spéciaux (au cas où)
+                const decodedClub = decodeURIComponent(clubParam);
+                
+                // Chercher le club (insensible à la casse)
+                const matchingOption = Array.from(select.options).find(option => 
+                    option.value.toLowerCase() === decodedClub.toLowerCase()
+                );
+                
+                if (matchingOption) {
+                    select.value = matchingOption.value;
+                    handleClubFilter(); // Appliquer le filtre
+                }
+            }
+            
+            updateStats();
+            
+            // Event listeners
+            document.getElementById('clubSearch').addEventListener('input', handleClubSearch);
+            document.getElementById('clubFilter').addEventListener('change', handleClubFilter);
+        });
+    </script>
+</body>
+</html>
