@@ -7,7 +7,7 @@ $config = [
     'dbname' => '850cl9_mysquash',
     'username' => '850cl9_dbdump',
     'password' => 'NXaFuZxFf_6WpTuFkqDw8',
-    'remote_script_url' => 'https://ranking.squash.ch/ClubRankingRanking/query.php'
+    'remote_script_url' => 'https://ranking.squash.ch/ClubRanking/query.php'
 ];
 
 $db = new DatabaseConnector($config);

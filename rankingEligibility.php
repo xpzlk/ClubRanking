@@ -29,9 +29,26 @@ if (getSeasonPart($simulDate) === 1) {
         // Pour les autres saisons, utiliser les données de la saison précédente
         $pastPlayers = getInterclubParticipants($config, 1, 'full', $simulDate);
     }
+    $currentPlayers = getInterclubParticipants($config, 0, 'full', $simulDate);
+
+    // Fusionner les deux tableaux participants
+    $mergedParticipants = array_merge($pastPlayers['participants'], $currentPlayers['participants']);
+
+    // Supprimer les doublons
+    $uniqueParticipants = array_unique($mergedParticipants);
+
+    // Optionnel : réindexer le tableau pour avoir des clés numériques consécutives
+    $uniqueParticipants = array_values($uniqueParticipants);
+
+    // Créer le tableau final fusionné
+    $eligiblePlayers = [
+        'success' => 1,
+        'count' => count($uniqueParticipants),
+        'participants' => $uniqueParticipants
+    ];    
 } else {
     #echo "Nous sommes dans la 2ᵉ partie de saison (01.01–31.08)\n";
-    $pastPlayers = getInterclubParticipants($config, 0, 'start', $simulDate);
+    $eligiblePlayers = getInterclubParticipants($config, 0, 'full', $simulDate);
 }
 
 
@@ -39,7 +56,7 @@ if (getSeasonPart($simulDate) === 1) {
 $ranking = getRankingData($config, $genderFilter);
 
 # On calcule le ranking avec le rang du club
-$rankingWithClubRank = calculateClubRanking($ranking, $pastPlayers);
+$rankingWithClubRank = calculateClubRanking($ranking, $eligiblePlayers);
 
 # On calcule l'éligibilité des joueurs
 $rankingWithEligibility = calculatePlayerEligibility($rankingWithClubRank, $teamsData);
