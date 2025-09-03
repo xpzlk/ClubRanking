@@ -663,3 +663,9 @@ td:nth-child(10) {
     background-color: #C70039;
     color: white;
 }
+
+.generation-date {
+    font-style: italic;
+    color: #666;
+    float: right;
+}

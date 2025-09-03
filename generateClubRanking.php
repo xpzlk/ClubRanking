@@ -56,11 +56,12 @@ $template = file_get_contents('template.html');
 // Remplacement des placeholders
 $html = str_replace('{{TABLE_ROWS}}', $tableRows, $template);
 $html = str_replace('{{CLUBS_JSON}}', $clubsJson, $html);
+$html = str_replace('{{GENERATION_DATE}}', date('d/m/Y H:i:s'), $html);
 
 // Affichage du HTML
-echo $html;
+#echo $html;
 
 // Génération du nom de fichier
-#$filename = 'ranking_squash.html';
-#file_put_contents($filename, $html);
+$filename = 'index.html';
+file_put_contents($filename, $html);
 ?>
