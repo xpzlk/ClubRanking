@@ -77,7 +77,7 @@ function getRankingData($config, $gender = '') {
         $db = new DatabaseConnector($config);
         
         // Construire la clause WHERE
-        $whereClause = "is_international = 0";
+        $whereClause = "is_international IN (0, 1)";
         
         if (!empty($gender) && in_array($gender, ['H', 'F'])) {
             $whereClause .= " AND gender_id = '" . $gender . "'";
